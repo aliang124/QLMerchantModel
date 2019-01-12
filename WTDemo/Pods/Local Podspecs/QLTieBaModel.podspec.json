@@ -24,10 +24,6 @@
     {
       "name": "Detail",
       "source_files": "QLTieBaModel/Detail/**/*.{h,m,c,mm}"
-    },
-    {
-      "name": "Merchant",
-      "source_files": "QLTieBaModel/Merchant/**/*.{h,m,c,mm}"
     }
   ]
 }

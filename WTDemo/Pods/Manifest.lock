@@ -85,10 +85,8 @@ PODS:
   - QLTieBaModel (0.0.1):
     - QLTieBaModel/Cell (= 0.0.1)
     - QLTieBaModel/Detail (= 0.0.1)
-    - QLTieBaModel/Merchant (= 0.0.1)
   - QLTieBaModel/Cell (0.0.1)
   - QLTieBaModel/Detail (0.0.1)
-  - QLTieBaModel/Merchant (0.0.1)
   - TZImagePickerController (2.0.0.9)
   - WTBaseCore (0.0.1):
     - FDFullscreenPopGesture (~> 1.1)
@@ -224,7 +222,7 @@ CHECKOUT OPTIONS:
     :commit: 4f249912bb589a26a5897a05b3ac9fe6afea713d
     :git: https://github.com/aliang124/QLMineModel.git
   QLTieBaModel:
-    :commit: 5ced5e7d78a1372ac95839ca3ae6922fdb28bc50
+    :commit: 29cf84c2fa7057694bb5a3f8798d62c103e45356
     :git: https://github.com/aliang124/QLTieBaModel.git
   WTBaseCore:
     :commit: 5e10d00566080cb22b4acaef7c5bb0dea5a72bd9
@@ -264,7 +262,7 @@ SPEC CHECKSUMS:
   QLHomeModel: 06f1346e68eccd47f8918c17b8a658fe73c29766
   QLLoginModel: ba379e60d2afe6170803201999d962c047387abb
   QLMineModel: 7fc344f7b9df1b494c9594c38bbdd330256636c9
-  QLTieBaModel: a9af3f6dbc8844c9325d169d4941e9b649bc7c10
+  QLTieBaModel: dd2557d0895b5309e451c8d39165f4725b7794c3
   TZImagePickerController: 9bf89512bb6de53e87897f2e17e607c126a199d6
   WTBaseCore: c46847e84d6a933554f3bed7ea1a94ed729131b3
   WTCyclePagerView: d08fe21d23d29a01f1e8a597f3a3d5e1583c6262

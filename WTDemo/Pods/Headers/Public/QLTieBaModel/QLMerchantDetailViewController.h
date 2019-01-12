@@ -1,1 +1,0 @@
-../../../QLTieBaModel/QLTieBaModel/Merchant/QLMerchantDetailViewController.h
