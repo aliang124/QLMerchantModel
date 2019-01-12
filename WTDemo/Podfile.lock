@@ -51,7 +51,9 @@ PODS:
   - QLCareModel/View (0.0.1)
   - QLHomeModel (0.0.1):
     - QLHomeModel/Cell (= 0.0.1)
+    - QLHomeModel/NetWorking (= 0.0.1)
   - QLHomeModel/Cell (0.0.1)
+  - QLHomeModel/NetWorking (0.0.1)
   - QLLoginModel (0.0.1):
     - QLLoginModel/Controller (= 0.0.1)
     - QLLoginModel/NetWorking (= 0.0.1)
@@ -213,7 +215,7 @@ CHECKOUT OPTIONS:
     :commit: c054a43cb9f5484cf15b1eaf356773dada960d3c
     :git: https://github.com/aliang124/QLCareModel.git
   QLHomeModel:
-    :commit: 099cc1542217fb5f2c7739b0e02a243114261dd8
+    :commit: 1d413a4ff2993e0b6ba8f1793f09e675e62fd930
     :git: https://github.com/aliang124/QLHomeModel.git
   QLLoginModel:
     :commit: 3bf589f808b95d0dcdd5c734c1305896552d34ff
@@ -259,7 +261,7 @@ SPEC CHECKSUMS:
   QLADLaunchModel: 892d37065da2b02475794ed59a9132ca3c5dc083
   QLBusiness: 2c4e9d0c50a04f8222450e9e33d55cc79d2bff32
   QLCareModel: d3bbba4b7aae0df90b6153ab9496bf22f301a799
-  QLHomeModel: 06f1346e68eccd47f8918c17b8a658fe73c29766
+  QLHomeModel: c4cb910b387f1e98ea2391de187b15884e5b245e
   QLLoginModel: ba379e60d2afe6170803201999d962c047387abb
   QLMineModel: 7fc344f7b9df1b494c9594c38bbdd330256636c9
   QLTieBaModel: dd2557d0895b5309e451c8d39165f4725b7794c3

@@ -20,6 +20,10 @@
     {
       "name": "Cell",
       "source_files": "QLHomeModel/Cell/**/*.{h,m,c,mm}"
+    },
+    {
+      "name": "NetWorking",
+      "source_files": "QLHomeModel/NetWorking/**/*.{h,m,c,mm}"
     }
   ]
 }
