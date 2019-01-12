@@ -9,6 +9,8 @@
 #import "QLMerchantDetailViewController.h"
 #import "WTLoadFailEmpty.h"
 #import "QLMerchantNetWorkingUtil.h"
+#import "QLMerchantPictureCell.h"
+#import "QLMerchantInfoCell.h"
 
 @interface QLMerchantDetailViewController ()
 @property (nonatomic,copy) NSDictionary *businessInfo;
@@ -19,6 +21,8 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     self.navBar.title = @"商家详情";
+    self.formManager[@"QLMerchantPictureItem"] = @"QLMerchantPictureCell";
+    self.formManager[@"QLMerchantInfoItem"] = @"QLMerchantInfoCell";
     [self getData];
 }
 
@@ -43,8 +47,15 @@
     WT(bself);
     NSMutableArray *sectionArray = [NSMutableArray array];
     RETableViewSection *section0 = [RETableViewSection section];
-    
 
+    QLMerchantPictureItem *itPic = [[QLMerchantPictureItem alloc] init];
+    itPic.info = self.businessInfo;
+    [section0 addItem:itPic];
+
+    QLMerchantInfoItem *itInfo = [[QLMerchantInfoItem alloc] init];
+    itInfo.info = self.businessInfo;
+    [section0 addItem:itInfo];
+    
     [sectionArray addObject:section0];
     [self.formManager replaceSectionsWithSectionsFromArray:sectionArray];
     [self.formTable reloadData];
