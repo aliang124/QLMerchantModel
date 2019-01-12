@@ -12,7 +12,7 @@
 #import "QLMerchantPictureCell.h"
 #import "QLMerchantInfoCell.h"
 #import "QLPicturesViewController.h"
-
+#import "QLMerchantTagStarCell.h"
 @interface QLMerchantDetailViewController ()
 @property (nonatomic,copy) NSDictionary *businessInfo;
 @end
@@ -24,6 +24,7 @@
     self.navBar.title = @"商家详情";
     self.formManager[@"QLMerchantPictureItem"] = @"QLMerchantPictureCell";
     self.formManager[@"QLMerchantInfoItem"] = @"QLMerchantInfoCell";
+    self.formManager[@"QLMerchantTagStarItem"] = @"QLMerchantTagStarCell";
     [self getData];
 }
 
@@ -60,6 +61,9 @@
     QLMerchantInfoItem *itInfo = [[QLMerchantInfoItem alloc] init];
     itInfo.info = self.businessInfo;
     [section0 addItem:itInfo];
+    
+    QLMerchantTagStarItem *itStar = [[QLMerchantTagStarItem alloc] init];
+    [section0 addItem:itStar];
     
     [sectionArray addObject:section0];
     [self.formManager replaceSectionsWithSectionsFromArray:sectionArray];

@@ -12,7 +12,7 @@
 @implementation QLMerchantInfoItem
 - (id)init{
     if (self = [super init]) {
-        self.cellHeight = 84;
+        self.cellHeight = 57;
     }
     return self;
 }
