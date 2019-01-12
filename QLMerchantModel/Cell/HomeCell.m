@@ -7,7 +7,7 @@
 //
 
 #import "HomeCell.h"
-#import <YYWebImage.h>
+#import "UIImageView+WebImage.h"
 
 @interface HomeCell ()
 
@@ -38,7 +38,7 @@
 
 - (void)updateImageURL:(NSString *)URLString
 {
-    [_imageView yy_setImageWithURL:[NSURL URLWithString:URLString] options:kNilOptions];
+    [_imageView setWebImageWithUrl:URLString placeHolder:nil];
 }
 
 - (void)layoutSubviews
