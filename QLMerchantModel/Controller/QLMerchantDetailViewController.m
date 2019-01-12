@@ -11,6 +11,7 @@
 #import "QLMerchantNetWorkingUtil.h"
 #import "QLMerchantPictureCell.h"
 #import "QLMerchantInfoCell.h"
+#import "QLPicturesViewController.h"
 
 @interface QLMerchantDetailViewController ()
 @property (nonatomic,copy) NSDictionary *businessInfo;
@@ -50,6 +51,10 @@
 
     QLMerchantPictureItem *itPic = [[QLMerchantPictureItem alloc] init];
     itPic.info = self.businessInfo;
+    itPic.selectionHandler = ^(id item) {
+        QLPicturesViewController *picVC = [[QLPicturesViewController alloc] init];
+        [bself.navigationController pushViewController:picVC animated:YES];
+    };
     [section0 addItem:itPic];
 
     QLMerchantInfoItem *itInfo = [[QLMerchantInfoItem alloc] init];
