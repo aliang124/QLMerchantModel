@@ -61,6 +61,27 @@ PODS:
   - QLLoginModel/NetWorking (0.0.1)
   - QLLoginModel/Util (0.0.1)
   - QLLoginModel/View (0.0.1)
+  - QLMineModel (0.0.1):
+    - QLMineModel/ABoutMe (= 0.0.1)
+    - QLMineModel/BabyRecord (= 0.0.1)
+    - QLMineModel/Cell (= 0.0.1)
+    - QLMineModel/FeedBack (= 0.0.1)
+    - QLMineModel/Funs (= 0.0.1)
+    - QLMineModel/GuanZhu (= 0.0.1)
+    - QLMineModel/Message (= 0.0.1)
+    - QLMineModel/NetWorking (= 0.0.1)
+    - QLMineModel/Setting (= 0.0.1)
+    - QLMineModel/UserInfo (= 0.0.1)
+  - QLMineModel/ABoutMe (0.0.1)
+  - QLMineModel/BabyRecord (0.0.1)
+  - QLMineModel/Cell (0.0.1)
+  - QLMineModel/FeedBack (0.0.1)
+  - QLMineModel/Funs (0.0.1)
+  - QLMineModel/GuanZhu (0.0.1)
+  - QLMineModel/Message (0.0.1)
+  - QLMineModel/NetWorking (0.0.1)
+  - QLMineModel/Setting (0.0.1)
+  - QLMineModel/UserInfo (0.0.1)
   - QLTieBaModel (0.0.1):
     - QLTieBaModel/Cell (= 0.0.1)
     - QLTieBaModel/Detail (= 0.0.1)
@@ -140,6 +161,7 @@ DEPENDENCIES:
   - QLCareModel (from `https://github.com/aliang124/QLCareModel.git`)
   - QLHomeModel (from `https://github.com/aliang124/QLHomeModel.git`)
   - QLLoginModel (from `https://github.com/aliang124/QLLoginModel.git`)
+  - QLMineModel (from `https://github.com/aliang124/QLMineModel.git`)
   - QLTieBaModel (from `https://github.com/aliang124/QLTieBaModel.git`)
   - WTBaseCore (from `https://github.com/jienliang000/WTBaseCore.git`)
   - WTCyclePagerView (from `https://github.com/jienliang000/WTCyclePagerView.git`)
@@ -161,6 +183,8 @@ EXTERNAL SOURCES:
     :git: https://github.com/aliang124/QLHomeModel.git
   QLLoginModel:
     :git: https://github.com/aliang124/QLLoginModel.git
+  QLMineModel:
+    :git: https://github.com/aliang124/QLMineModel.git
   QLTieBaModel:
     :git: https://github.com/aliang124/QLTieBaModel.git
   WTBaseCore:
@@ -196,8 +220,11 @@ CHECKOUT OPTIONS:
   QLLoginModel:
     :commit: e9174b39258c10fcb9d3934404010919051678ae
     :git: https://github.com/aliang124/QLLoginModel.git
+  QLMineModel:
+    :commit: 4f249912bb589a26a5897a05b3ac9fe6afea713d
+    :git: https://github.com/aliang124/QLMineModel.git
   QLTieBaModel:
-    :commit: a6153fb1871a5f5e644263a4e12487f1c7cb3179
+    :commit: 5ced5e7d78a1372ac95839ca3ae6922fdb28bc50
     :git: https://github.com/aliang124/QLTieBaModel.git
   WTBaseCore:
     :commit: 5e10d00566080cb22b4acaef7c5bb0dea5a72bd9
@@ -236,6 +263,7 @@ SPEC CHECKSUMS:
   QLCareModel: d3bbba4b7aae0df90b6153ab9496bf22f301a799
   QLHomeModel: 06f1346e68eccd47f8918c17b8a658fe73c29766
   QLLoginModel: ba379e60d2afe6170803201999d962c047387abb
+  QLMineModel: 7fc344f7b9df1b494c9594c38bbdd330256636c9
   QLTieBaModel: a9af3f6dbc8844c9325d169d4941e9b649bc7c10
   TZImagePickerController: 9bf89512bb6de53e87897f2e17e607c126a199d6
   WTBaseCore: c46847e84d6a933554f3bed7ea1a94ed729131b3
@@ -250,6 +278,6 @@ SPEC CHECKSUMS:
   YYImage: 1e1b62a9997399593e4b9c4ecfbbabbf1d3f3b54
   YYWebImage: 5f7f36aee2ae293f016d418c7d6ba05c4863e928
 
-PODFILE CHECKSUM: c636ff32863a2a3afcf3e45a957c4925165489e2
+PODFILE CHECKSUM: c84fd9978718dbcc715fa3468434312145b128b5
 
 COCOAPODS: 1.4.0
