@@ -155,8 +155,9 @@
     for (int i = 0; i < self.dataArray.count; i++) {
         QLMerchantListItem *it = [[QLMerchantListItem alloc] init];
         it.info = self.dataArray[i];
-        it.selectionHandler = ^(id item) {
+        it.selectionHandler = ^(QLMerchantListItem *item) {
             QLMerchantDetailViewController *detail = [[QLMerchantDetailViewController alloc] init];
+            detail.businessId = [WTUtil strRelay:item.info[@"id"]];
             [weakSelf.navigationController pushViewController:detail animated:YES];
         };
         [section0 addItem:it];
