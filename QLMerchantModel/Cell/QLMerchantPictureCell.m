@@ -8,6 +8,7 @@
 #import "QLMerchantPictureCell.h"
 #import "WTBaseCore.h"
 #import "QLBusiness.h"
+#import "UIImageView+WebImage.h"
 
 @implementation QLMerchantPictureItem
 - (id)init{
