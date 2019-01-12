@@ -5,11 +5,25 @@
 //  Created by 计恩良 on 2019/1/12.
 //  Copyright © 2019年 计恩良. All rights reserved.
 //
+//个人中心
+#define QL_NetWorking_BusinessCategory @"/business/category"
 
 #import "QLMerchantNetWorkingUtil.h"
 #import "WTBaseCore.h"
 #import "QLBusiness.h"
+#import "QLNetWorkingUtil.h"
 
 @implementation QLMerchantNetWorkingUtil
++ (void)getBusinessCategory:(NSDictionary *)info successHandler:(void (^)(id json))successHandler failHandler:(void (^)(NSString *message))failHandler {
+    [QLNetWorkingUtil postDataWithHost:QL_Net_Host Path:QL_NetWorking_BusinessCategory Param:info success:^(id json) {
+        if (successHandler) {
+            successHandler(json);
+        }
+    } fail:^(NSString *message) {
+        if (failHandler) {
+            failHandler(message);
+        }
+    }];
+}
 
 @end

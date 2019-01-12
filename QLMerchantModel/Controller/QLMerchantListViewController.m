@@ -11,6 +11,8 @@
 #import "QLBusiness.h"
 #import "QLMerchantListCell.h"
 #import "QLMerchantDetailViewController.h"
+#import "QLMerchantNetWorkingUtil.h"
+
 @interface QLMerchantListViewController ()<QLDropDownMenuDataSource,QLDropDownMenuDelegate>
 {
     NSMutableArray *_data1;

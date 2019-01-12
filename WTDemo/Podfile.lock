@@ -213,10 +213,10 @@ CHECKOUT OPTIONS:
     :commit: c054a43cb9f5484cf15b1eaf356773dada960d3c
     :git: https://github.com/aliang124/QLCareModel.git
   QLHomeModel:
-    :commit: 80c04a960eb8ba0628296065baf327626858e9a9
+    :commit: 099cc1542217fb5f2c7739b0e02a243114261dd8
     :git: https://github.com/aliang124/QLHomeModel.git
   QLLoginModel:
-    :commit: e9174b39258c10fcb9d3934404010919051678ae
+    :commit: 3bf589f808b95d0dcdd5c734c1305896552d34ff
     :git: https://github.com/aliang124/QLLoginModel.git
   QLMineModel:
     :commit: 4f249912bb589a26a5897a05b3ac9fe6afea713d
