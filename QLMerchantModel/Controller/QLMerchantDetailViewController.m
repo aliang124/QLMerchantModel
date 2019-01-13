@@ -13,6 +13,8 @@
 #import "QLMerchantInfoCell.h"
 #import "QLPicturesViewController.h"
 #import "QLMerchantTagStarCell.h"
+#import "QLMerchantTagTimeCell.h"
+#import "QLMerchantTagCell.h"
 @interface QLMerchantDetailViewController ()
 @property (nonatomic,copy) NSDictionary *businessInfo;
 @end
@@ -25,6 +27,8 @@
     self.formManager[@"QLMerchantPictureItem"] = @"QLMerchantPictureCell";
     self.formManager[@"QLMerchantInfoItem"] = @"QLMerchantInfoCell";
     self.formManager[@"QLMerchantTagStarItem"] = @"QLMerchantTagStarCell";
+    self.formManager[@"QLMerchantTagTimeItem"] = @"QLMerchantTagTimeCell";
+    self.formManager[@"QLMerchantTagItem"] = @"QLMerchantTagCell";
     [self getData];
 }
 
@@ -64,6 +68,17 @@
     
     QLMerchantTagStarItem *itStar = [[QLMerchantTagStarItem alloc] init];
     [section0 addItem:itStar];
+    
+    WTEmptyItem *itEmp = [[WTEmptyItem alloc] init];
+    itEmp.bgColor = [UIColor whiteColor];
+    itEmp.cellHeight = 11;
+    [section0 addItem:itEmp];
+    
+    QLMerchantTagTimeItem *itTagTime = [[QLMerchantTagTimeItem alloc] init];
+    [section0 addItem:itTagTime];
+    
+    QLMerchantTagItem *itTag = [[QLMerchantTagItem alloc] init];
+    [section0 addItem:itTag];
     
     [sectionArray addObject:section0];
     [self.formManager replaceSectionsWithSectionsFromArray:sectionArray];

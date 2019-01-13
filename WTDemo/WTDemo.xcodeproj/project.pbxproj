@@ -23,6 +23,8 @@
 		50EE21A121EA577F00E1D9D1 /* QLPicturesViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 50EE21A021EA577F00E1D9D1 /* QLPicturesViewController.m */; };
 		50EE21A421EA580800E1D9D1 /* HomeCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 50EE21A321EA580800E1D9D1 /* HomeCell.m */; };
 		50EE21A721EA5E1700E1D9D1 /* QLMerchantTagStarCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 50EE21A621EA5E1700E1D9D1 /* QLMerchantTagStarCell.m */; };
+		50EE21AA21EAF6F900E1D9D1 /* QLMerchantTagTimeCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 50EE21A821EAF6F900E1D9D1 /* QLMerchantTagTimeCell.m */; };
+		50EE21AD21EAFA0600E1D9D1 /* QLMerchantTagCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 50EE21AC21EAFA0600E1D9D1 /* QLMerchantTagCell.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -55,6 +57,10 @@
 		50EE21A321EA580800E1D9D1 /* HomeCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HomeCell.m; sourceTree = "<group>"; };
 		50EE21A521EA5E1700E1D9D1 /* QLMerchantTagStarCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QLMerchantTagStarCell.h; sourceTree = "<group>"; };
 		50EE21A621EA5E1700E1D9D1 /* QLMerchantTagStarCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QLMerchantTagStarCell.m; sourceTree = "<group>"; };
+		50EE21A821EAF6F900E1D9D1 /* QLMerchantTagTimeCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QLMerchantTagTimeCell.m; sourceTree = "<group>"; };
+		50EE21A921EAF6F900E1D9D1 /* QLMerchantTagTimeCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QLMerchantTagTimeCell.h; sourceTree = "<group>"; };
+		50EE21AB21EAFA0600E1D9D1 /* QLMerchantTagCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QLMerchantTagCell.h; sourceTree = "<group>"; };
+		50EE21AC21EAFA0600E1D9D1 /* QLMerchantTagCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QLMerchantTagCell.m; sourceTree = "<group>"; };
 		A24F37922F2E1F5DE6CD53EC /* libPods-WTDemo.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-WTDemo.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		C2F9E923A66FEA1755F59C0D /* Pods-WTDemo.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-WTDemo.release.xcconfig"; path = "Pods/Target Support Files/Pods-WTDemo/Pods-WTDemo.release.xcconfig"; sourceTree = "<group>"; };
 		C8162E2829EB8076EBC3E808 /* Pods-WTDemo.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-WTDemo.debug.xcconfig"; path = "Pods/Target Support Files/Pods-WTDemo/Pods-WTDemo.debug.xcconfig"; sourceTree = "<group>"; };
@@ -146,6 +152,10 @@
 		50EE218021EA0B3E00E1D9D1 /* Cell */ = {
 			isa = PBXGroup;
 			children = (
+				50EE21AB21EAFA0600E1D9D1 /* QLMerchantTagCell.h */,
+				50EE21AC21EAFA0600E1D9D1 /* QLMerchantTagCell.m */,
+				50EE21A921EAF6F900E1D9D1 /* QLMerchantTagTimeCell.h */,
+				50EE21A821EAF6F900E1D9D1 /* QLMerchantTagTimeCell.m */,
 				50EE21A521EA5E1700E1D9D1 /* QLMerchantTagStarCell.h */,
 				50EE21A621EA5E1700E1D9D1 /* QLMerchantTagStarCell.m */,
 				50EE21A221EA580800E1D9D1 /* HomeCell.h */,
@@ -333,9 +343,11 @@
 				50EE218521EA0C8200E1D9D1 /* QLMerchantListCell.m in Sources */,
 				50EE21A721EA5E1700E1D9D1 /* QLMerchantTagStarCell.m in Sources */,
 				50EE219B21EA421B00E1D9D1 /* QLMerchantPictureCell.m in Sources */,
+				50EE21AD21EAFA0600E1D9D1 /* QLMerchantTagCell.m in Sources */,
 				50EE218B21EA0CA600E1D9D1 /* QLMerchantListViewController.m in Sources */,
 				50DADCE12192811A00DA8BFE /* AppDelegate.m in Sources */,
 				50EE219E21EA44BB00E1D9D1 /* QLMerchantInfoCell.m in Sources */,
+				50EE21AA21EAF6F900E1D9D1 /* QLMerchantTagTimeCell.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
