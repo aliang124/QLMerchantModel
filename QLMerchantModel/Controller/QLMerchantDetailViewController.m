@@ -16,7 +16,7 @@
 #import "QLMerchantTagTimeCell.h"
 #import "QLMerchantTagCell.h"
 #import "QLMerchantAddressPhoneCell.h"
-
+#import "QLMerchantTitleCell.h"
 @interface QLMerchantDetailViewController ()
 @property (nonatomic,copy) NSDictionary *businessInfo;
 @end
@@ -32,6 +32,7 @@
     self.formManager[@"QLMerchantTagTimeItem"] = @"QLMerchantTagTimeCell";
     self.formManager[@"QLMerchantTagItem"] = @"QLMerchantTagCell";
     self.formManager[@"QLMerchantAddressPhoneItem"] = @"QLMerchantAddressPhoneCell";
+    self.formManager[@"QLMerchantTitleItem"] = @"QLMerchantTitleCell";
     [self getData];
 }
 
@@ -91,6 +92,9 @@
     itEmp1.cellHeight = 17;
     [section0 addItem:itEmp1];
 
+    QLMerchantTitleItem *itTitleT = [[QLMerchantTitleItem alloc] init];
+    [section0 addItem:itTitleT];
+    
     [sectionArray addObject:section0];
     [self.formManager replaceSectionsWithSectionsFromArray:sectionArray];
     [self.formTable reloadData];

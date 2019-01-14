@@ -26,6 +26,7 @@
 		50EE21AA21EAF6F900E1D9D1 /* QLMerchantTagTimeCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 50EE21A821EAF6F900E1D9D1 /* QLMerchantTagTimeCell.m */; };
 		50EE21AD21EAFA0600E1D9D1 /* QLMerchantTagCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 50EE21AC21EAFA0600E1D9D1 /* QLMerchantTagCell.m */; };
 		50EE21B021EAFD1500E1D9D1 /* QLMerchantAddressPhoneCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 50EE21AE21EAFD1400E1D9D1 /* QLMerchantAddressPhoneCell.m */; };
+		50EE21B321EB02CF00E1D9D1 /* QLMerchantTitleCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 50EE21B221EB02CF00E1D9D1 /* QLMerchantTitleCell.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -64,6 +65,8 @@
 		50EE21AC21EAFA0600E1D9D1 /* QLMerchantTagCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QLMerchantTagCell.m; sourceTree = "<group>"; };
 		50EE21AE21EAFD1400E1D9D1 /* QLMerchantAddressPhoneCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QLMerchantAddressPhoneCell.m; sourceTree = "<group>"; };
 		50EE21AF21EAFD1500E1D9D1 /* QLMerchantAddressPhoneCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QLMerchantAddressPhoneCell.h; sourceTree = "<group>"; };
+		50EE21B121EB02CF00E1D9D1 /* QLMerchantTitleCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QLMerchantTitleCell.h; sourceTree = "<group>"; };
+		50EE21B221EB02CF00E1D9D1 /* QLMerchantTitleCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QLMerchantTitleCell.m; sourceTree = "<group>"; };
 		A24F37922F2E1F5DE6CD53EC /* libPods-WTDemo.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-WTDemo.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		C2F9E923A66FEA1755F59C0D /* Pods-WTDemo.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-WTDemo.release.xcconfig"; path = "Pods/Target Support Files/Pods-WTDemo/Pods-WTDemo.release.xcconfig"; sourceTree = "<group>"; };
 		C8162E2829EB8076EBC3E808 /* Pods-WTDemo.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-WTDemo.debug.xcconfig"; path = "Pods/Target Support Files/Pods-WTDemo/Pods-WTDemo.debug.xcconfig"; sourceTree = "<group>"; };
@@ -155,6 +158,8 @@
 		50EE218021EA0B3E00E1D9D1 /* Cell */ = {
 			isa = PBXGroup;
 			children = (
+				50EE21B121EB02CF00E1D9D1 /* QLMerchantTitleCell.h */,
+				50EE21B221EB02CF00E1D9D1 /* QLMerchantTitleCell.m */,
 				50EE21AF21EAFD1500E1D9D1 /* QLMerchantAddressPhoneCell.h */,
 				50EE21AE21EAFD1400E1D9D1 /* QLMerchantAddressPhoneCell.m */,
 				50EE21AB21EAFA0600E1D9D1 /* QLMerchantTagCell.h */,
@@ -340,6 +345,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				50EE21A121EA577F00E1D9D1 /* QLPicturesViewController.m in Sources */,
+				50EE21B321EB02CF00E1D9D1 /* QLMerchantTitleCell.m in Sources */,
 				50EE219121EA12AA00E1D9D1 /* QLMerchantNetWorkingUtil.m in Sources */,
 				50EE21A421EA580800E1D9D1 /* HomeCell.m in Sources */,
 				50EE218A21EA0CA600E1D9D1 /* QLMerchantDetailViewController.m in Sources */,
