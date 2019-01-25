@@ -113,8 +113,13 @@
     for (int i = 0; i < 2; i++) {
         QLPingJiaItem *itPingJia = [[QLPingJiaItem alloc] init];
         itPingJia.scoreText = [NSString stringWithFormat:@"%d",i+3];
+        if (i==0) {
+            itPingJia.pictureArray = [NSArray arrayWithObjects:@"",@"",@"", nil];
+        }
         [section0 addItem:itPingJia];
     }
+    
+    [section0 addItem:[WTEmptyItem initWithHeight:8]];
     [sectionArray addObject:section0];
     [self.formManager replaceSectionsWithSectionsFromArray:sectionArray];
     [self.formTable reloadData];

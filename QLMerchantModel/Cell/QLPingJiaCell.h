@@ -13,6 +13,7 @@
 @property (nonatomic,copy) NSString *descText;
 @property (nonatomic,copy) NSString *viewCount;
 @property (nonatomic,copy) NSString *dianZanCount;
+@property (nonatomic,copy) NSArray *pictureArray;
 @end
 
 @interface QLPingJiaCell : RETableViewCell

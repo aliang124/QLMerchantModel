@@ -8,6 +8,7 @@
 #import "QLPingJiaCell.h"
 #import "WTBaseCore.h"
 #import "QLBusiness.h"
+#import "UIImageView+WebImage.h"
 
 @implementation QLPingJiaItem
 - (id)init{
@@ -28,6 +29,9 @@
     UIImageView *starImg4;
     UIImageView *starImg5;
     UILabel *scoreLab;
+    UILabel *descLab;
+    
+    UIView *bottomView;
 }
 @end
 
@@ -37,17 +41,64 @@
 {
     [super cellDidLoad];
     [self createSocreArea];
+    [self createDescLab];
+    [self createBottomView];
 }
 
 - (void)cellWillAppear
 {
     [super cellWillAppear];
     [self setScoreAreaValue];
+    descLab.text = @"店里很卫生，安全设施很好，吃的很放心味道也挺好，菜都很精致。";
+    [descLab sizeToFit];
+    [self createPictures];
+    
+    float pictureHeight = 0;
+    if (self.item.pictureArray.count>0) {
+        pictureHeight = 96*QL_MULPITLE;
+    }
+    self.item.cellHeight = descLab.bottom+pictureHeight+(28*QL_MULPITLE);
+    
+    bottomView.top = self.item.cellHeight- (28*QL_MULPITLE);
 }
 
 - (void)layoutSubviews
 {
     [super layoutSubviews];
+}
+
+- (void)createBottomView {
+    bottomView = [[UIView alloc] initWithFrame:CGRectMakes(0, 0, 360, 28)];
+    bottomView.userInteractionEnabled = NO;
+    [self.contentView addSubview:bottomView];
+
+}
+
+- (void)createPictures {
+    [[self.contentView viewWithTag:12345] removeFromSuperview];
+    if (self.item.pictureArray.count>0) {
+        UIView *pictureView = [[UIView alloc] initWithFrame:CGRectMake(0, descLab.bottom+(8*QL_MULPITLE), WTScreenWidth, 88*QL_MULPITLE)];
+        pictureView.userInteractionEnabled = NO;
+        pictureView.tag = 12345;
+        [self.contentView addSubview:pictureView];
+        
+        float offsetX = 16;
+        for (int i = 0; i < self.item.pictureArray.count; i++) {
+            offsetX = 16+(i*100)+(i*14);
+            
+            UIButton *picBtn = [[UIButton alloc] initWithFrame:CGRectMakes(offsetX, 0, 100, 88)];
+            picBtn.backgroundColor = [UIColor redColor];
+            [pictureView addSubview:picBtn];
+        }
+    }
+}
+
+- (void)createDescLab {
+    descLab = [[UILabel alloc] initWithFrame:CGRectMakes(16, 32, 360-16-21, 12)];
+    descLab.font = WTFontSys(QL_MULPITLE*12);
+    descLab.textColor = QL_DescColor_Gray;
+    descLab.numberOfLines = 0;
+    [self.contentView addSubview:descLab];
 }
 
 - (void)createSocreArea {
