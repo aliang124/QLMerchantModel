@@ -17,6 +17,7 @@
 #import "QLMerchantTagCell.h"
 #import "QLMerchantAddressPhoneCell.h"
 #import "QLMerchantTitleCell.h"
+#import "QLMerchantProductsCell.h"
 #import "WTBaseCore.h"
 #import "QLBusiness.h"
 
@@ -36,6 +37,7 @@
     self.formManager[@"QLMerchantTagItem"] = @"QLMerchantTagCell";
     self.formManager[@"QLMerchantAddressPhoneItem"] = @"QLMerchantAddressPhoneCell";
     self.formManager[@"QLMerchantTitleItem"] = @"QLMerchantTitleCell";
+    self.formManager[@"QLMerchantProductsItem"] = @"QLMerchantProductsCell";
     [self getData];
 }
 
@@ -97,6 +99,12 @@
 
     QLMerchantTitleItem *itTitleT = [[QLMerchantTitleItem alloc] init];
     [section0 addItem:itTitleT];
+    
+    [section0 addItem:[WTEmptyItem initWithHeight:8]];
+    
+    QLMerchantProductsItem *itProduct = [[QLMerchantProductsItem alloc] init];
+    itProduct.productArray = [NSArray arrayWithObjects:@"",@"",@"",@"", nil];
+    [section0 addItem:itProduct];
     
     [sectionArray addObject:section0];
     [self.formManager replaceSectionsWithSectionsFromArray:sectionArray];
