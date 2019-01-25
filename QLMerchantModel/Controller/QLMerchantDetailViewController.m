@@ -19,6 +19,8 @@
 #import "QLMerchantTitleCell.h"
 #import "QLMerchantProductsCell.h"
 #import "QLPingJiaCell.h"
+#import "QLMoreButtonCell.h"
+#import "QLMerchantQinZiCell.h"
 
 @interface QLMerchantDetailViewController ()
 @property (nonatomic,copy) NSDictionary *businessInfo;
@@ -38,6 +40,9 @@
     self.formManager[@"QLMerchantTitleItem"] = @"QLMerchantTitleCell";
     self.formManager[@"QLMerchantProductsItem"] = @"QLMerchantProductsCell";
     self.formManager[@"QLPingJiaItem"] = @"QLPingJiaCell";
+    self.formManager[@"QLMoreButtonItem"] = @"QLMoreButtonCell";
+    self.formManager[@"QLMerchantQinZiItem"] = @"QLMerchantQinZiCell";
+    self.formTable.height = WTScreenHeight-WT_NavBar_Height-54-WT_SafeArea_BOTTOM;
     [self getData];
 }
 
@@ -101,23 +106,40 @@
     [section0 addItem:itTitleT];
     
     //商品
-    [section0 addItem:[WTEmptyItem initWithHeight:8]];
-    QLMerchantProductsItem *itProduct = [[QLMerchantProductsItem alloc] init];
-    itProduct.productArray = [NSArray arrayWithObjects:@"",@"",@"",@"", nil];
-    [section0 addItem:itProduct];
-    
-    //评价
-    [section0 addItem:[WTEmptyItem initWithHeight:8]];
-    for (int i = 0; i < 2; i++) {
-        QLPingJiaItem *itPingJia = [[QLPingJiaItem alloc] init];
-        itPingJia.scoreText = [NSString stringWithFormat:@"%d",i+3];
-        if (i==0) {
-            itPingJia.pictureArray = [NSArray arrayWithObjects:@"",@"",@"", nil];
-        }
-        [section0 addItem:itPingJia];
+    NSArray *goodsArray = [NSArray arrayWithObjects:@"",@"",@"",@"", nil];
+    if (goodsArray.count>0) {
+        [section0 addItem:[WTEmptyItem initWithHeight:8]];
+        QLMerchantProductsItem *itProduct = [[QLMerchantProductsItem alloc] init];
+        itProduct.productArray = goodsArray;
+        [section0 addItem:itProduct];
     }
     
-    [section0 addItem:[WTEmptyItem initWithHeight:8]];
+    //评价
+    NSArray *pingJiaArray = [NSArray arrayWithObjects:@"",@"",@"", nil];
+    if (pingJiaArray.count>0) {
+        [section0 addItem:[WTEmptyItem initWithHeight:8]];
+        for (int i = 0; i < pingJiaArray.count; i++) {
+            QLPingJiaItem *itPingJia = [[QLPingJiaItem alloc] init];
+            itPingJia.scoreText = [NSString stringWithFormat:@"%d",i+3];
+            if (i==0) {
+                itPingJia.pictureArray = pingJiaArray;
+            }
+            [section0 addItem:itPingJia];
+        }
+        QLMoreButtonItem *itMore = [[QLMoreButtonItem alloc] init];
+        itMore.titleText = @"查看更多评价";
+        [section0 addItem:itMore];
+    }
+    
+    //周边亲子
+    NSArray *qinZiArrays = [NSArray arrayWithObjects:@"",@"",@"",@"", nil];
+    if (qinZiArrays.count>0) {
+        [section0 addItem:[WTEmptyItem initWithHeight:8]];
+        QLMerchantQinZiItem *itQinZi = [[QLMerchantQinZiItem alloc] init];
+        itQinZi.qinZiArray = qinZiArrays;
+        [section0 addItem:itQinZi];
+    }
+    
     [sectionArray addObject:section0];
     [self.formManager replaceSectionsWithSectionsFromArray:sectionArray];
     [self.formTable reloadData];

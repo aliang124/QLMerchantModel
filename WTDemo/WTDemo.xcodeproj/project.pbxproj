@@ -11,6 +11,8 @@
 		505B9A1D21E7703F00753310 /* city.plist in Resources */ = {isa = PBXBuildFile; fileRef = 505B9A1C21E7703F00753310 /* city.plist */; };
 		505F4B0321FB38C800F5B354 /* QLMerchantProductsCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 505F4B0221FB38C800F5B354 /* QLMerchantProductsCell.m */; };
 		505F4B0621FB430F00F5B354 /* QLPingJiaCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 505F4B0521FB430F00F5B354 /* QLPingJiaCell.m */; };
+		505F4B0921FB5EE900F5B354 /* QLMoreButtonCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 505F4B0721FB5EE900F5B354 /* QLMoreButtonCell.m */; };
+		505F4B0C21FB626100F5B354 /* QLMerchantQinZiCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 505F4B0B21FB626100F5B354 /* QLMerchantQinZiCell.m */; };
 		50DADCE12192811A00DA8BFE /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 50DADCE02192811A00DA8BFE /* AppDelegate.m */; };
 		50DADCE92192811B00DA8BFE /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 50DADCE82192811B00DA8BFE /* Assets.xcassets */; };
 		50DADCEC2192811B00DA8BFE /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 50DADCEA2192811B00DA8BFE /* LaunchScreen.storyboard */; };
@@ -37,6 +39,10 @@
 		505F4B0221FB38C800F5B354 /* QLMerchantProductsCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QLMerchantProductsCell.m; sourceTree = "<group>"; };
 		505F4B0421FB430F00F5B354 /* QLPingJiaCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QLPingJiaCell.h; sourceTree = "<group>"; };
 		505F4B0521FB430F00F5B354 /* QLPingJiaCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QLPingJiaCell.m; sourceTree = "<group>"; };
+		505F4B0721FB5EE900F5B354 /* QLMoreButtonCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QLMoreButtonCell.m; sourceTree = "<group>"; };
+		505F4B0821FB5EE900F5B354 /* QLMoreButtonCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QLMoreButtonCell.h; sourceTree = "<group>"; };
+		505F4B0A21FB626100F5B354 /* QLMerchantQinZiCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QLMerchantQinZiCell.h; sourceTree = "<group>"; };
+		505F4B0B21FB626100F5B354 /* QLMerchantQinZiCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QLMerchantQinZiCell.m; sourceTree = "<group>"; };
 		50DADCDC2192811A00DA8BFE /* WTDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = WTDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		50DADCDF2192811A00DA8BFE /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		50DADCE02192811A00DA8BFE /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
@@ -164,6 +170,10 @@
 		50EE218021EA0B3E00E1D9D1 /* Cell */ = {
 			isa = PBXGroup;
 			children = (
+				505F4B0A21FB626100F5B354 /* QLMerchantQinZiCell.h */,
+				505F4B0B21FB626100F5B354 /* QLMerchantQinZiCell.m */,
+				505F4B0821FB5EE900F5B354 /* QLMoreButtonCell.h */,
+				505F4B0721FB5EE900F5B354 /* QLMoreButtonCell.m */,
 				505F4B0421FB430F00F5B354 /* QLPingJiaCell.h */,
 				505F4B0521FB430F00F5B354 /* QLPingJiaCell.m */,
 				505F4B0121FB38C800F5B354 /* QLMerchantProductsCell.h */,
@@ -355,6 +365,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				50EE21A121EA577F00E1D9D1 /* QLPicturesViewController.m in Sources */,
+				505F4B0921FB5EE900F5B354 /* QLMoreButtonCell.m in Sources */,
 				50EE21B321EB02CF00E1D9D1 /* QLMerchantTitleCell.m in Sources */,
 				50EE219121EA12AA00E1D9D1 /* QLMerchantNetWorkingUtil.m in Sources */,
 				505F4B0321FB38C800F5B354 /* QLMerchantProductsCell.m in Sources */,
@@ -371,6 +382,7 @@
 				50DADCE12192811A00DA8BFE /* AppDelegate.m in Sources */,
 				50EE219E21EA44BB00E1D9D1 /* QLMerchantInfoCell.m in Sources */,
 				50EE21AA21EAF6F900E1D9D1 /* QLMerchantTagTimeCell.m in Sources */,
+				505F4B0C21FB626100F5B354 /* QLMerchantQinZiCell.m in Sources */,
 				50EE21B021EAFD1500E1D9D1 /* QLMerchantAddressPhoneCell.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
