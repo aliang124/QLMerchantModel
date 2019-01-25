@@ -10,6 +10,7 @@
 		221AEC82A8DB30A6462C9440 /* libPods-WTDemo.a in Frameworks */ = {isa = PBXBuildFile; fileRef = A24F37922F2E1F5DE6CD53EC /* libPods-WTDemo.a */; };
 		505B9A1D21E7703F00753310 /* city.plist in Resources */ = {isa = PBXBuildFile; fileRef = 505B9A1C21E7703F00753310 /* city.plist */; };
 		505F4B0321FB38C800F5B354 /* QLMerchantProductsCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 505F4B0221FB38C800F5B354 /* QLMerchantProductsCell.m */; };
+		505F4B0621FB430F00F5B354 /* QLPingJiaCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 505F4B0521FB430F00F5B354 /* QLPingJiaCell.m */; };
 		50DADCE12192811A00DA8BFE /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 50DADCE02192811A00DA8BFE /* AppDelegate.m */; };
 		50DADCE92192811B00DA8BFE /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 50DADCE82192811B00DA8BFE /* Assets.xcassets */; };
 		50DADCEC2192811B00DA8BFE /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 50DADCEA2192811B00DA8BFE /* LaunchScreen.storyboard */; };
@@ -34,6 +35,8 @@
 		505B9A1C21E7703F00753310 /* city.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = city.plist; sourceTree = "<group>"; };
 		505F4B0121FB38C800F5B354 /* QLMerchantProductsCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QLMerchantProductsCell.h; sourceTree = "<group>"; };
 		505F4B0221FB38C800F5B354 /* QLMerchantProductsCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QLMerchantProductsCell.m; sourceTree = "<group>"; };
+		505F4B0421FB430F00F5B354 /* QLPingJiaCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QLPingJiaCell.h; sourceTree = "<group>"; };
+		505F4B0521FB430F00F5B354 /* QLPingJiaCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QLPingJiaCell.m; sourceTree = "<group>"; };
 		50DADCDC2192811A00DA8BFE /* WTDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = WTDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		50DADCDF2192811A00DA8BFE /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		50DADCE02192811A00DA8BFE /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
@@ -161,6 +164,8 @@
 		50EE218021EA0B3E00E1D9D1 /* Cell */ = {
 			isa = PBXGroup;
 			children = (
+				505F4B0421FB430F00F5B354 /* QLPingJiaCell.h */,
+				505F4B0521FB430F00F5B354 /* QLPingJiaCell.m */,
 				505F4B0121FB38C800F5B354 /* QLMerchantProductsCell.h */,
 				505F4B0221FB38C800F5B354 /* QLMerchantProductsCell.m */,
 				50EE21B121EB02CF00E1D9D1 /* QLMerchantTitleCell.h */,
@@ -354,6 +359,7 @@
 				50EE219121EA12AA00E1D9D1 /* QLMerchantNetWorkingUtil.m in Sources */,
 				505F4B0321FB38C800F5B354 /* QLMerchantProductsCell.m in Sources */,
 				50EE21A421EA580800E1D9D1 /* HomeCell.m in Sources */,
+				505F4B0621FB430F00F5B354 /* QLPingJiaCell.m in Sources */,
 				50EE218A21EA0CA600E1D9D1 /* QLMerchantDetailViewController.m in Sources */,
 				50EE218E21EA0FD600E1D9D1 /* Target_QLMerchantModel.m in Sources */,
 				50DADCEF2192811B00DA8BFE /* main.m in Sources */,

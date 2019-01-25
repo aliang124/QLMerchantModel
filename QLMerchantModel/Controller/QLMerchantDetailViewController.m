@@ -18,6 +18,7 @@
 #import "QLMerchantAddressPhoneCell.h"
 #import "QLMerchantTitleCell.h"
 #import "QLMerchantProductsCell.h"
+#import "QLPingJiaCell.h"
 #import "WTBaseCore.h"
 #import "QLBusiness.h"
 
@@ -38,6 +39,7 @@
     self.formManager[@"QLMerchantAddressPhoneItem"] = @"QLMerchantAddressPhoneCell";
     self.formManager[@"QLMerchantTitleItem"] = @"QLMerchantTitleCell";
     self.formManager[@"QLMerchantProductsItem"] = @"QLMerchantProductsCell";
+    self.formManager[@"QLPingJiaItem"] = @"QLPingJiaCell";
     [self getData];
 }
 
@@ -100,12 +102,19 @@
     QLMerchantTitleItem *itTitleT = [[QLMerchantTitleItem alloc] init];
     [section0 addItem:itTitleT];
     
+    //商品
     [section0 addItem:[WTEmptyItem initWithHeight:8]];
-    
     QLMerchantProductsItem *itProduct = [[QLMerchantProductsItem alloc] init];
     itProduct.productArray = [NSArray arrayWithObjects:@"",@"",@"",@"", nil];
     [section0 addItem:itProduct];
     
+    //评价
+    [section0 addItem:[WTEmptyItem initWithHeight:8]];
+    for (int i = 0; i < 2; i++) {
+        QLPingJiaItem *itPingJia = [[QLPingJiaItem alloc] init];
+        itPingJia.scoreText = [NSString stringWithFormat:@"%d",i+3];
+        [section0 addItem:itPingJia];
+    }
     [sectionArray addObject:section0];
     [self.formManager replaceSectionsWithSectionsFromArray:sectionArray];
     [self.formTable reloadData];
