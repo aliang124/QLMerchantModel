@@ -38,7 +38,26 @@
 - (void)cellWillAppear
 {
     [super cellWillAppear];
-    self.item.cellHeight = (16+12+160+(self.item.qinZiArray.count-1)*12)*QL_MULPITLE;
+    int xxx = (int)self.item.qinZiArray.count/2;
+    if (self.item.qinZiArray.count%2!=0) {
+        xxx = xxx + 1;
+    }
+    self.item.cellHeight = (16+12+(160*xxx)+(xxx-1)*12)*QL_MULPITLE;
+    
+    [self.contentView removeAllSubviews];
+    float offsetY = 16;
+    float offsetX = 12;
+    for (int i = 0; i < self.item.qinZiArray.count; i++) {
+        int yyy = i/2;
+        int xxx = i%2;
+        
+        offsetY = 16+(160*yyy)+(12*yyy);
+        offsetX = 12+(162*xxx)+(12*xxx);
+        
+        UIButton *btn = [[UIButton alloc] initWithFrame:CGRectMakes(offsetX, offsetY, 162, 160)];
+        btn.backgroundColor = [UIColor redColor];
+        [self.contentView addSubview:btn];
+    }
 }
 
 @end
