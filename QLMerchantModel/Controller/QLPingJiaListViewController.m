@@ -97,7 +97,7 @@
         int score = [[WTUtil strRelay:dic[@"score"]] intValue];
         QLPingJiaItem *it = [[QLPingJiaItem alloc] init];
         it.scoreText = [NSString stringWithFormat:@"%d",score];
-        it.descText = [WTUtil strRelay:dic[@"comments"]];
+        it.descText = dic[@"comments"];
         it.info = dic;
         it.viewCount = dic[@"commentsNumber"];
         it.dianZanCount = dic[@"praiseNumber"];
