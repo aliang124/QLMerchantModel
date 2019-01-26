@@ -26,4 +26,5 @@
 
 @interface QLMerchantDetailViewController : QLFormViewController
 @property (nonatomic,copy) NSString *businessId;
+@property (nonatomic,strong) QLBottomView *bottomView;
 @end

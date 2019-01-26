@@ -30,6 +30,13 @@
     self.formManager[@"QLMerchantQinZiItem"] = @"QLMerchantQinZiCell";
     self.formTable.height = WTScreenHeight-WT_NavBar_Height-54-WT_SafeArea_BOTTOM;
     [self getData];
+    [self createBottomView];
+}
+
+- (void)createBottomView {
+    _bottomView = [[QLBottomView alloc] initWithFrame:CGRectMake(0, WTScreenHeight-54-WT_SafeArea_BOTTOM, WTScreenWidth, 54+WT_SafeArea_BOTTOM)];
+    _bottomView.backgroundColor = [UIColor whiteColor];
+    [self.view addSubview:_bottomView];
 }
 
 - (void)getData {
@@ -125,7 +132,8 @@
         itQinZi.qinZiArray = qinZiArrays;
         [section0 addItem:itQinZi];
     }
-    
+    [section0 addItem:[WTEmptyItem initWithHeight:8]];
+
     [sectionArray addObject:section0];
     [self.formManager replaceSectionsWithSectionsFromArray:sectionArray];
     [self.formTable reloadData];
