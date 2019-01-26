@@ -94,11 +94,16 @@
     for (int i = 0; i < self.listArray.count; i++) {
         NSDictionary *dic = self.listArray[i];
         
+        int score = [[WTUtil strRelay:dic[@"score"]] intValue];
         QLPingJiaItem *it = [[QLPingJiaItem alloc] init];
-//        itPingJia.scoreText = [NSString stringWithFormat:@"%d",i+3];
-//        if (i==0) {
-//            itPingJia.pictureArray = pingJiaArray;
-//        }
+        it.scoreText = [NSString stringWithFormat:@"%d",score];
+        it.descText = [WTUtil strRelay:dic[@"comments"]];
+        it.info = dic;
+        it.viewCount = dic[@"commentsNumber"];
+        it.dianZanCount = dic[@"praiseNumber"];
+        if (i==0) {
+            it.pictureArray = [NSArray arrayWithObjects:@"",@"", nil];
+        }
         [section0 addItem:it];
     }
     

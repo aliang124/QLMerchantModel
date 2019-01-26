@@ -58,7 +58,7 @@
 {
     [super cellWillAppear];
     [self setScoreAreaValue];
-    descLab.text = @"店里很卫生，安全设施很好，吃的很放心味道也挺好，菜都很精致。";
+    descLab.text = [WTUtil strRelay:self.item.descText];
     [descLab sizeToFit];
     [self createPictures];
     
@@ -74,16 +74,16 @@
 }
 
 - (void)setBottomView {
-    //留言数
-    liuYanCountLab.text = @"1214";
+    //点赞数
+    liuYanCountLab.text = [WTUtil strRelay:self.item.dianZanCount];
     [liuYanCountLab sizeToFit];
     liuYanCountLab.top = (bottomView.height-liuYanCountLab.height)/2;
     liuYanCountLab.left = WTScreenWidth-(16*QL_MULPITLE)-liuYanCountLab.width;
     
     liuYanIcon.top = 9*QL_MULPITLE;
     liuYanIcon.left = liuYanCountLab.left-(15*QL_MULPITLE);
-    //浏览数
-    liulanCountLab.text = @"1212";
+    //评论数
+    liulanCountLab.text = [WTUtil strRelay:self.item.viewCount];
     liulanCountLab.top = 9*QL_MULPITLE;
     [liulanCountLab sizeToFit];
     liulanCountLab.left = liuYanIcon.left-(16*QL_MULPITLE)-liulanCountLab.width;
@@ -169,9 +169,9 @@
 }
 
 - (void)setScoreAreaValue {
-    int starCount = (int)[[WTUtil strRelay:self.item.scoreText] intValue];
-    starView.starCount = starCount;
-    scoreLab.text = @"3.7";
+    double starCount = [[WTUtil strRelay:self.item.scoreText] doubleValue];
+    starView.starCount = (int)starCount;
+    scoreLab.text = [NSString stringWithFormat:@"%0.1f",starCount];
 }
 
 - (void)setSelected:(BOOL)selected animated:(BOOL)animated{}
