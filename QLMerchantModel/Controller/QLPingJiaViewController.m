@@ -8,6 +8,8 @@
 
 #import "QLPingJiaViewController.h"
 #import "QLMerchantNetWorkingUtil.h"
+#import "QLPingJiaHeadView.h"
+
 @interface QLPingJiaViewController ()
 @property (nonatomic,copy) NSDictionary *businessInfo;
 @end
@@ -16,7 +18,7 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    self.navBar.title = @"评价";
+    self.navBar.title = @"评价";    
     [self initForm];
 }
 

@@ -8,7 +8,7 @@
 
 #import "QLMerchantDetailViewController.h"
 #import "QLZhuYeViewController.h"
-
+#import "QLPingJiaListViewController.h"
 @interface QLMerchantDetailViewController ()
 @property (nonatomic,copy) NSDictionary *businessInfo;
 @end
@@ -41,10 +41,10 @@
 }
 
 - (void)getData {
-    [WTLoadingView1 showLoadingInView:self.view];
+    [WTLoadingView1 showLoadingInView:self.view top:WT_NavBar_Height];
     [QLMerchantNetWorkingUtil getBusinessDetail:self.businessId successHandler:^(id json) {
         [WTLoadingView1 hideAllLoadingForView:self.view];
-        self.businessInfo = json[@"businessInfo"][0];
+        self.businessInfo = json[@"businessInfo"];
         [self initForm];
     } failHandler:^(NSString *message) {
         [WTLoadingView1 hideAllLoadingForView:self.view];
@@ -122,6 +122,11 @@
         }
         QLMoreButtonItem *itMore = [[QLMoreButtonItem alloc] init];
         itMore.titleText = @"查看更多评价";
+        itMore.selectionHandler = ^(id item) {
+            QLPingJiaListViewController *list = [[QLPingJiaListViewController alloc] init];
+            list.businessId = bself.businessId;
+            WTRootNavPush(list);
+        };
         [section0 addItem:itMore];
     }
     

@@ -17,6 +17,8 @@
 		5060B18C21FC288900CE93F4 /* QLBottomView.m in Sources */ = {isa = PBXBuildFile; fileRef = 5060B18B21FC288900CE93F4 /* QLBottomView.m */; };
 		5060B18F21FC525F00CE93F4 /* QLZhuYeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5060B18E21FC525F00CE93F4 /* QLZhuYeViewController.m */; };
 		5060B19221FC540900CE93F4 /* QLPingJiaViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5060B19121FC540900CE93F4 /* QLPingJiaViewController.m */; };
+		5060B1A421FC8E5500CE93F4 /* QLPingJiaHeadView.m in Sources */ = {isa = PBXBuildFile; fileRef = 5060B1A321FC8E5500CE93F4 /* QLPingJiaHeadView.m */; };
+		5060B1A721FC8FE700CE93F4 /* QLPingJiaListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5060B1A521FC8FE700CE93F4 /* QLPingJiaListViewController.m */; };
 		50DADCE12192811A00DA8BFE /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 50DADCE02192811A00DA8BFE /* AppDelegate.m */; };
 		50DADCE92192811B00DA8BFE /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 50DADCE82192811B00DA8BFE /* Assets.xcassets */; };
 		50DADCEC2192811B00DA8BFE /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 50DADCEA2192811B00DA8BFE /* LaunchScreen.storyboard */; };
@@ -55,6 +57,10 @@
 		5060B18E21FC525F00CE93F4 /* QLZhuYeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QLZhuYeViewController.m; sourceTree = "<group>"; };
 		5060B19021FC540900CE93F4 /* QLPingJiaViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QLPingJiaViewController.h; sourceTree = "<group>"; };
 		5060B19121FC540900CE93F4 /* QLPingJiaViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QLPingJiaViewController.m; sourceTree = "<group>"; };
+		5060B1A221FC8E5500CE93F4 /* QLPingJiaHeadView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = QLPingJiaHeadView.h; sourceTree = "<group>"; };
+		5060B1A321FC8E5500CE93F4 /* QLPingJiaHeadView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = QLPingJiaHeadView.m; sourceTree = "<group>"; };
+		5060B1A521FC8FE700CE93F4 /* QLPingJiaListViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QLPingJiaListViewController.m; sourceTree = "<group>"; };
+		5060B1A621FC8FE700CE93F4 /* QLPingJiaListViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QLPingJiaListViewController.h; sourceTree = "<group>"; };
 		50DADCDC2192811A00DA8BFE /* WTDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = WTDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		50DADCDF2192811A00DA8BFE /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		50DADCE02192811A00DA8BFE /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
@@ -177,6 +183,8 @@
 				50EE21A021EA577F00E1D9D1 /* QLPicturesViewController.m */,
 				5060B18D21FC525F00CE93F4 /* QLZhuYeViewController.h */,
 				5060B18E21FC525F00CE93F4 /* QLZhuYeViewController.m */,
+				5060B1A621FC8FE700CE93F4 /* QLPingJiaListViewController.h */,
+				5060B1A521FC8FE700CE93F4 /* QLPingJiaListViewController.m */,
 				5060B19021FC540900CE93F4 /* QLPingJiaViewController.h */,
 				5060B19121FC540900CE93F4 /* QLPingJiaViewController.m */,
 			);
@@ -230,6 +238,8 @@
 				5060B18821FC1C5900CE93F4 /* QLStarView.m */,
 				5060B18A21FC288900CE93F4 /* QLBottomView.h */,
 				5060B18B21FC288900CE93F4 /* QLBottomView.m */,
+				5060B1A221FC8E5500CE93F4 /* QLPingJiaHeadView.h */,
+				5060B1A321FC8E5500CE93F4 /* QLPingJiaHeadView.m */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -400,6 +410,7 @@
 				50DADCEF2192811B00DA8BFE /* main.m in Sources */,
 				50EE218521EA0C8200E1D9D1 /* QLMerchantListCell.m in Sources */,
 				50EE21A721EA5E1700E1D9D1 /* QLMerchantTagStarCell.m in Sources */,
+				5060B1A421FC8E5500CE93F4 /* QLPingJiaHeadView.m in Sources */,
 				50EE219B21EA421B00E1D9D1 /* QLMerchantPictureCell.m in Sources */,
 				50EE21AD21EAFA0600E1D9D1 /* QLMerchantTagCell.m in Sources */,
 				5060B18C21FC288900CE93F4 /* QLBottomView.m in Sources */,
@@ -407,6 +418,7 @@
 				50DADCE12192811A00DA8BFE /* AppDelegate.m in Sources */,
 				50EE219E21EA44BB00E1D9D1 /* QLMerchantInfoCell.m in Sources */,
 				5060B19221FC540900CE93F4 /* QLPingJiaViewController.m in Sources */,
+				5060B1A721FC8FE700CE93F4 /* QLPingJiaListViewController.m in Sources */,
 				50EE21AA21EAF6F900E1D9D1 /* QLMerchantTagTimeCell.m in Sources */,
 				505F4B0C21FB626100F5B354 /* QLMerchantQinZiCell.m in Sources */,
 				5060B18F21FC525F00CE93F4 /* QLZhuYeViewController.m in Sources */,
@@ -551,7 +563,10 @@
 				GCC_PREFIX_HEADER = "$(SRCROOT)/WTDemo/WTDemo.pch";
 				INFOPLIST_FILE = WTDemo/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = jienliang.WTDemo;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -568,7 +583,10 @@
 				GCC_PREFIX_HEADER = "$(SRCROOT)/WTDemo/WTDemo.pch";
 				INFOPLIST_FILE = WTDemo/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = jienliang.WTDemo;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TARGETED_DEVICE_FAMILY = "1,2";

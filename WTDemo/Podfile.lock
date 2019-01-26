@@ -234,7 +234,7 @@ CHECKOUT OPTIONS:
     :commit: 3bf589f808b95d0dcdd5c734c1305896552d34ff
     :git: https://github.com/aliang124/QLLoginModel.git
   QLMineModel:
-    :commit: bcbb9da466f179be263c82b70236aea5b3b69585
+    :commit: 2415c49a17406a35ddb99ce2719a1caa7d5b82fc
     :git: https://github.com/aliang124/QLMineModel.git
   QLTieBaModel:
     :commit: 6eaf6cc7e96c76926d0281a37beec293307083c2
