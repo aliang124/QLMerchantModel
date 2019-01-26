@@ -7,7 +7,8 @@
 //
 
 #import "QLBottomView.h"
-
+#import "QLZhuYeViewController.h"
+#import "QLPingJiaViewController.h"
 @implementation QLBottomView
 
 - (id)initWithFrame:(CGRect)frame {
@@ -16,11 +17,13 @@
         float width = (WTScreenWidth-8-8-8)/2;
 
         UIButton *leftBtn = [[UIButton alloc] initWithFrame:CGRectMake(8, 8, width, 38)];
-        [self setRounct:leftBtn titleText:@"我要评价" imgIcon:@"QLBusiness/woyaoPingJia"];
+        [self setRounct:leftBtn titleText:@"我要评价" imgIcon:@"woyaoPingJia"];
+        [leftBtn addTarget:self action:@selector(goToPingJia) forControlEvents:UIControlEventTouchUpInside];
         [self addSubview:leftBtn];
         
         UIButton *rightBtn = [[WTCustomButton alloc] initWithFrame:CGRectMake(leftBtn.right+8, 8, width, 38)];
-        [self setRounct:rightBtn titleText:@"商家主页" imgIcon:@"QLBusiness/seeZhuYe"];
+        [rightBtn addTarget:self action:@selector(goToZhuYe) forControlEvents:UIControlEventTouchUpInside];
+        [self setRounct:rightBtn titleText:@"商家主页" imgIcon:@"seeZhuYe"];
         [self addSubview:rightBtn];
     }
     return self;
@@ -48,5 +51,15 @@
     iconImage.left = offset;
     titleLab.left = iconImage.right+7;
     titleLab.top = (btn.height-titleLab.height)/2;
+}
+
+- (void)goToZhuYe {
+    QLZhuYeViewController *zhu = [[QLZhuYeViewController alloc] init];
+    WTRootNavPush(zhu);
+}
+
+- (void)goToPingJia {
+    QLPingJiaViewController *zhu = [[QLPingJiaViewController alloc] init];
+    WTRootNavPush(zhu);
 }
 @end

@@ -7,6 +7,7 @@
 //
 
 #import "QLMerchantDetailViewController.h"
+#import "QLZhuYeViewController.h"
 
 @interface QLMerchantDetailViewController ()
 @property (nonatomic,copy) NSDictionary *businessInfo;
