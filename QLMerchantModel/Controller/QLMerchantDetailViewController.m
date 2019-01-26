@@ -7,20 +7,6 @@
 //
 
 #import "QLMerchantDetailViewController.h"
-#import "WTLoadFailEmpty.h"
-#import "QLMerchantNetWorkingUtil.h"
-#import "QLMerchantPictureCell.h"
-#import "QLMerchantInfoCell.h"
-#import "QLPicturesViewController.h"
-#import "QLMerchantTagStarCell.h"
-#import "QLMerchantTagTimeCell.h"
-#import "QLMerchantTagCell.h"
-#import "QLMerchantAddressPhoneCell.h"
-#import "QLMerchantTitleCell.h"
-#import "QLMerchantProductsCell.h"
-#import "QLPingJiaCell.h"
-#import "QLMoreButtonCell.h"
-#import "QLMerchantQinZiCell.h"
 
 @interface QLMerchantDetailViewController ()
 @property (nonatomic,copy) NSDictionary *businessInfo;

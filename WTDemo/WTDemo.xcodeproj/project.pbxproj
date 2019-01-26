@@ -14,6 +14,7 @@
 		505F4B0921FB5EE900F5B354 /* QLMoreButtonCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 505F4B0721FB5EE900F5B354 /* QLMoreButtonCell.m */; };
 		505F4B0C21FB626100F5B354 /* QLMerchantQinZiCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 505F4B0B21FB626100F5B354 /* QLMerchantQinZiCell.m */; };
 		5060B18921FC1C5900CE93F4 /* QLStarView.m in Sources */ = {isa = PBXBuildFile; fileRef = 5060B18821FC1C5900CE93F4 /* QLStarView.m */; };
+		5060B18C21FC288900CE93F4 /* QLBottomView.m in Sources */ = {isa = PBXBuildFile; fileRef = 5060B18B21FC288900CE93F4 /* QLBottomView.m */; };
 		50DADCE12192811A00DA8BFE /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 50DADCE02192811A00DA8BFE /* AppDelegate.m */; };
 		50DADCE92192811B00DA8BFE /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 50DADCE82192811B00DA8BFE /* Assets.xcassets */; };
 		50DADCEC2192811B00DA8BFE /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 50DADCEA2192811B00DA8BFE /* LaunchScreen.storyboard */; };
@@ -46,6 +47,8 @@
 		505F4B0B21FB626100F5B354 /* QLMerchantQinZiCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QLMerchantQinZiCell.m; sourceTree = "<group>"; };
 		5060B18721FC1C5900CE93F4 /* QLStarView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = QLStarView.h; sourceTree = "<group>"; };
 		5060B18821FC1C5900CE93F4 /* QLStarView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = QLStarView.m; sourceTree = "<group>"; };
+		5060B18A21FC288900CE93F4 /* QLBottomView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = QLBottomView.h; sourceTree = "<group>"; };
+		5060B18B21FC288900CE93F4 /* QLBottomView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = QLBottomView.m; sourceTree = "<group>"; };
 		50DADCDC2192811A00DA8BFE /* WTDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = WTDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		50DADCDF2192811A00DA8BFE /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		50DADCE02192811A00DA8BFE /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
@@ -215,6 +218,8 @@
 			children = (
 				5060B18721FC1C5900CE93F4 /* QLStarView.h */,
 				5060B18821FC1C5900CE93F4 /* QLStarView.m */,
+				5060B18A21FC288900CE93F4 /* QLBottomView.h */,
+				5060B18B21FC288900CE93F4 /* QLBottomView.m */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -383,6 +388,7 @@
 				50EE21A721EA5E1700E1D9D1 /* QLMerchantTagStarCell.m in Sources */,
 				50EE219B21EA421B00E1D9D1 /* QLMerchantPictureCell.m in Sources */,
 				50EE21AD21EAFA0600E1D9D1 /* QLMerchantTagCell.m in Sources */,
+				5060B18C21FC288900CE93F4 /* QLBottomView.m in Sources */,
 				50EE218B21EA0CA600E1D9D1 /* QLMerchantListViewController.m in Sources */,
 				50DADCE12192811A00DA8BFE /* AppDelegate.m in Sources */,
 				50EE219E21EA44BB00E1D9D1 /* QLMerchantInfoCell.m in Sources */,
