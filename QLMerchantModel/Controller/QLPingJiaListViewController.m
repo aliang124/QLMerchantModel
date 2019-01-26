@@ -96,7 +96,7 @@
         
         QLPingJiaItem *it = [[QLPingJiaItem alloc] init];
         it.info = dic;
-        it.scoreText = [WTUtil strRelay:dic[@"score"]];
+        it.scoreText = dic[@"score"];
         it.descText = dic[@"comments"];
         it.viewCount = dic[@"commentsNumber"];
         it.dianZanCount = dic[@"praiseNumber"];
