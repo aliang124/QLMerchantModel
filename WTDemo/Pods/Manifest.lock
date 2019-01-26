@@ -234,7 +234,7 @@ CHECKOUT OPTIONS:
     :commit: 3bf589f808b95d0dcdd5c734c1305896552d34ff
     :git: https://github.com/aliang124/QLLoginModel.git
   QLMineModel:
-    :commit: e695abbb3a139c01d99642264d7156019e3a614b
+    :commit: bcbb9da466f179be263c82b70236aea5b3b69585
     :git: https://github.com/aliang124/QLMineModel.git
   QLTieBaModel:
     :commit: 6eaf6cc7e96c76926d0281a37beec293307083c2
@@ -252,7 +252,7 @@ CHECKOUT OPTIONS:
     :commit: 7b473ee5106cfb41c14f7e23419b742e6d2420b6
     :git: https://github.com/jienliang000/WTImagePicker.git
   WTLoadingView:
-    :commit: ad8c399dfa2ccab85c12d07b9f2237e666859770
+    :commit: 28d011c937a8ee6aedb200979cd38b50e276f512
     :git: https://github.com/jienliang000/WTLoadingView.git
   WTPagerController:
     :commit: 445fc81659f788bd92c3a61e5ffefe2f0a08561f
