@@ -21,6 +21,7 @@
     "tag": "0.0.1"
   },
   "source_files": "QLBusiness/*.{h,m}",
+  "resources": "QLBusiness/Res/QLBusiness.bundle",
   "subspecs": [
     {
       "name": "Cell",
@@ -49,6 +50,10 @@
     {
       "name": "AddressPicker",
       "source_files": "QLBusiness/AddressPicker/**/*.{h,m,plist}"
+    },
+    {
+      "name": "Res",
+      "source_files": "QLBusiness/Res/**/*.{h,m}"
     }
   ]
 }
