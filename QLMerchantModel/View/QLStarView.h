@@ -7,6 +7,8 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "WTBaseCore.h"
+#import "QLBusiness.h"
 
 @interface QLStarView : UIView
 @property (strong,nonatomic) UIImageView *starImg1;
