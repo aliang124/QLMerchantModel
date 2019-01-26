@@ -7,6 +7,8 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "WTBaseCore.h"
+#import "QLBusiness.h"
 
 @interface QLPingJiaHeadView : UIView
 @property (nonatomic,strong) UIButton *allBtn;
