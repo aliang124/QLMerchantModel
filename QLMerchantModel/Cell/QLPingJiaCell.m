@@ -9,6 +9,7 @@
 #import "WTBaseCore.h"
 #import "QLBusiness.h"
 #import "UIImageView+WebImage.h"
+#import "QLStarView.h"
 
 @implementation QLPingJiaItem
 - (id)init{
@@ -23,11 +24,7 @@
 @interface QLPingJiaCell()
 {
     UIView *headPingJiaView;
-    UIImageView *starImg1;
-    UIImageView *starImg2;
-    UIImageView *starImg3;
-    UIImageView *starImg4;
-    UIImageView *starImg5;
+    QLStarView *starView;
     UILabel *scoreLab;
     UILabel *descLab;
     
@@ -93,11 +90,6 @@
     
     liulanIcon.top = 9*QL_MULPITLE;
     liulanIcon.left = liulanCountLab.left-(15*QL_MULPITLE);
-
-}
-- (void)layoutSubviews
-{
-    [super layoutSubviews];
 }
 
 - (void)createBottomView {
@@ -166,22 +158,11 @@
     [pingFenLab sizeToFit];
     pingFenLab.top = (headPingJiaView.height-pingFenLab.height)/2;
     
-    starImg1 = [[UIImageView alloc] initWithFrame:CGRectMakes(pingFenLab.right+7, 11.5, 9, 9)];
-    [headPingJiaView addSubview:starImg1];
+    CGPoint pt = CGPointMake(pingFenLab.right+(7*QL_MULPITLE), 11.5*QL_MULPITLE);
+    starView = [[QLStarView alloc] initWithPoint:pt];
+    [headPingJiaView addSubview:starView];
     
-    starImg2 = [[UIImageView alloc] initWithFrame:CGRectMakes(starImg1.right+4, 11.5, 9, 9)];
-    [headPingJiaView addSubview:starImg2];
-    
-    starImg3 = [[UIImageView alloc] initWithFrame:CGRectMakes(starImg2.right+4, 11.5, 9, 9)];
-    [headPingJiaView addSubview:starImg3];
-    
-    starImg4 = [[UIImageView alloc] initWithFrame:CGRectMakes(starImg3.right+4, 11.5, 9, 9)];
-    [headPingJiaView addSubview:starImg4];
-    
-    starImg5 = [[UIImageView alloc] initWithFrame:CGRectMakes(starImg4.right+4, 11.5, 9, 9)];
-    [headPingJiaView addSubview:starImg5];
-    
-    scoreLab = [[UILabel alloc] initWithFrame:CGRectMakes(starImg5.right+11, 0, 100, 32)];
+    scoreLab = [[UILabel alloc] initWithFrame:CGRectMake(starView.right+11, 0, 100, headPingJiaView.height)];
     scoreLab.font = WTFontSys(QL_MULPITLE*10);
     scoreLab.textColor = QL_DescColor_Gray;
     [headPingJiaView addSubview:scoreLab];
@@ -189,42 +170,7 @@
 
 - (void)setScoreAreaValue {
     int starCount = (int)[[WTUtil strRelay:self.item.scoreText] intValue];
-    [starImg1 setImage:[UIImage imageNamed:@"starGray"]];
-    [starImg2 setImage:[UIImage imageNamed:@"starGray"]];
-    [starImg3 setImage:[UIImage imageNamed:@"starGray"]];
-    [starImg4 setImage:[UIImage imageNamed:@"starGray"]];
-    [starImg5 setImage:[UIImage imageNamed:@"starGray"]];
-    if (starCount==1) {
-        [starImg1 setImage:[UIImage imageNamed:@"starYellow"]];
-        [starImg2 setImage:[UIImage imageNamed:@"starGray"]];
-        [starImg3 setImage:[UIImage imageNamed:@"starGray"]];
-        [starImg4 setImage:[UIImage imageNamed:@"starGray"]];
-        [starImg5 setImage:[UIImage imageNamed:@"starGray"]];
-    } else if (starCount==2) {
-        [starImg1 setImage:[UIImage imageNamed:@"starYellow"]];
-        [starImg2 setImage:[UIImage imageNamed:@"starYellow"]];
-        [starImg3 setImage:[UIImage imageNamed:@"starGray"]];
-        [starImg4 setImage:[UIImage imageNamed:@"starGray"]];
-        [starImg5 setImage:[UIImage imageNamed:@"starGray"]];
-    } else if (starCount==3) {
-        [starImg1 setImage:[UIImage imageNamed:@"starYellow"]];
-        [starImg2 setImage:[UIImage imageNamed:@"starYellow"]];
-        [starImg3 setImage:[UIImage imageNamed:@"starYellow"]];
-        [starImg4 setImage:[UIImage imageNamed:@"starGray"]];
-        [starImg5 setImage:[UIImage imageNamed:@"starGray"]];
-    } else if (starCount==4) {
-        [starImg1 setImage:[UIImage imageNamed:@"starYellow"]];
-        [starImg2 setImage:[UIImage imageNamed:@"starYellow"]];
-        [starImg3 setImage:[UIImage imageNamed:@"starYellow"]];
-        [starImg4 setImage:[UIImage imageNamed:@"starYellow"]];
-        [starImg5 setImage:[UIImage imageNamed:@"starGray"]];
-    } else if (starCount==5) {
-        [starImg1 setImage:[UIImage imageNamed:@"starYellow"]];
-        [starImg2 setImage:[UIImage imageNamed:@"starYellow"]];
-        [starImg3 setImage:[UIImage imageNamed:@"starYellow"]];
-        [starImg4 setImage:[UIImage imageNamed:@"starYellow"]];
-        [starImg5 setImage:[UIImage imageNamed:@"starYellow"]];
-    }
+    starView.starCount = starCount;
     scoreLab.text = @"3.7";
 }
 

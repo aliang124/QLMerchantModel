@@ -9,7 +9,7 @@
 #import "WTBaseCore.h"
 #import "QLBusiness.h"
 #import "UIImageView+WebImage.h"
-
+#import "QLStarView.h"
 @implementation QLMerchantQinZiItem
 - (id)init{
     if (self = [super init]) {
@@ -56,6 +56,9 @@
         offsetX = 12+(162*xxx)+(12*xxx);
         
         UIButton *btn = [[UIButton alloc] initWithFrame:CGRectMakes(offsetX, offsetY, 162, 160)];
+        btn.layer.cornerRadius = 2;
+        btn.layer.borderColor = QL_Border_LineColor.CGColor;
+        btn.layer.borderWidth = 0.5;
         [self.contentView addSubview:btn];
         
         UIImageView *imageV = [[UIImageView alloc] initWithFrame:CGRectMakes(0, 0, 162, 100)];
@@ -63,17 +66,51 @@
         [btn addSubview:imageV];
         
         UILabel *tagLab = [[UILabel alloc] init];
-        tagLab.font = WTFontSys(10*QL_MULPITLE);
+        tagLab.font = WTFontSys(10);
         tagLab.textColor = QL_TagTextColor_Green;
         tagLab.backgroundColor = QL_TagColor_Green;
         tagLab.text = @"西餐";
         tagLab.textAlignment = NSTextAlignmentCenter;
         [btn addSubview:tagLab];
         [tagLab sizeToFit];
-        tagLab.left = 20*QL_MULPITLE;
-        tagLab.width = tagLab.width+(10*QL_MULPITLE);
-        tagLab.top = 106*QL_MULPITLE;
-        tagLab.height = 14*QL_MULPITLE;
+        tagLab.frame = CGRectMakes(8, 106, tagLab.width+(10*QL_MULPITLE), 14*QL_MULPITLE);
+        
+        UILabel *titleLab = [[UILabel alloc] initWithFrame:CGRectMake(tagLab.right+6, tagLab.top, btn.width-tagLab.right-6, tagLab.height)];
+        titleLab.font = WTFontBoldSys(10);
+        titleLab.textColor = QL_UserName_TitleColor_Black;
+        titleLab.text = @"Lunaluz露娜家亲子餐厅";
+        [btn addSubview:titleLab];
+        
+        CGPoint pt = CGPointMake(8*QL_MULPITLE, 121*QL_MULPITLE);
+        QLStarView *starView = [[QLStarView alloc] initWithPoint:pt];
+        starView.starCount = 4;
+        [btn addSubview:starView];
+        
+        UILabel *scoreLab = [[UILabel alloc] initWithFrame:CGRectMake(starView.right+6, starView.top, 40, starView.height)];
+        scoreLab.font = WTFontSys(10);
+        scoreLab.textColor = QL_DescColor_Gray;
+        scoreLab.text = @"3.7";
+        [btn addSubview:scoreLab];
+
+        UILabel *ageLab = [[UILabel alloc] initWithFrame:CGRectMakes(0, 127, 154, 9)];
+        ageLab.font = WTFontSys(10);
+        ageLab.textColor = QL_DescColor_Gray;
+        ageLab.textAlignment = NSTextAlignmentRight;
+        ageLab.text = @"0-9岁";
+        [btn addSubview:ageLab];
+        
+        UILabel *addressLab = [[UILabel alloc] initWithFrame:CGRectMakes(8, 142, 154, 10)];
+        addressLab.font = WTFontSys(10);
+        addressLab.textColor = QL_DescColor_Gray;
+        addressLab.text = @"宁国路商业区";
+        [btn addSubview:addressLab];
+        
+        UILabel *distanceLab = [[UILabel alloc] initWithFrame:CGRectMakes(0, 142, 154, 10)];
+        distanceLab.font = WTFontSys(10);
+        distanceLab.textColor = QL_DescColor_Gray;
+        distanceLab.text = @"1.8km";
+        distanceLab.textAlignment = NSTextAlignmentRight;
+        [btn addSubview:distanceLab];
     }
 }
 
