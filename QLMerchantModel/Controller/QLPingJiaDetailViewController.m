@@ -11,7 +11,7 @@
 #import "QLPingJiaHeadView.h"
 #import "QLPingJiaHeadBannerCell.h"
 #import "QLPingJiaDetailUserCell.h"
-
+#import "QLPingJiaMerchantCell.h"
 @interface QLPingJiaDetailViewController ()
 @property (nonatomic,copy) NSDictionary *commentsData;
 @end
@@ -23,6 +23,7 @@
     self.navBar.title = @"评价详情";
     self.formManager[@"QLPingJiaHeadBannerItem"] = @"QLPingJiaHeadBannerCell";
     self.formManager[@"QLPingJiaDetailUserItem"] = @"QLPingJiaDetailUserCell";
+    self.formManager[@"QLPingJiaMerchantItem"] = @"QLPingJiaMerchantCell";
     [self getData];
 }
 
@@ -55,6 +56,10 @@
     QLPingJiaDetailUserItem *itUser = [[QLPingJiaDetailUserItem alloc] init];
     itUser.info = self.commentsData;
     [section0 addItem:itUser];
+    
+    QLPingJiaMerchantItem *itMerchant = [[QLPingJiaMerchantItem alloc] init];
+    itMerchant.info = self.commentsData;
+    [section0 addItem:itMerchant];
     
     [sectionArray addObject:section0];
     [self.formManager replaceSectionsWithSectionsFromArray:sectionArray];
