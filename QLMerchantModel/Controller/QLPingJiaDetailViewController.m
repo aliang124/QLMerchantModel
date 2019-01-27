@@ -12,6 +12,9 @@
 #import "QLPingJiaHeadBannerCell.h"
 #import "QLPingJiaDetailUserCell.h"
 #import "QLPingJiaMerchantCell.h"
+#import "QLPingJiaScoreCell.h"
+#import "QLPingJiaDescCell.h"
+
 @interface QLPingJiaDetailViewController ()
 @property (nonatomic,copy) NSDictionary *commentsData;
 @end
@@ -24,6 +27,8 @@
     self.formManager[@"QLPingJiaHeadBannerItem"] = @"QLPingJiaHeadBannerCell";
     self.formManager[@"QLPingJiaDetailUserItem"] = @"QLPingJiaDetailUserCell";
     self.formManager[@"QLPingJiaMerchantItem"] = @"QLPingJiaMerchantCell";
+    self.formManager[@"QLPingJiaScoreItem"] = @"QLPingJiaScoreCell";
+    self.formManager[@"QLPingJiaDescItem"] = @"QLPingJiaDescCell";
     [self getData];
 }
 
@@ -60,6 +65,14 @@
     QLPingJiaMerchantItem *itMerchant = [[QLPingJiaMerchantItem alloc] init];
     itMerchant.info = self.commentsData;
     [section0 addItem:itMerchant];
+    
+    QLPingJiaScoreItem *itScore = [[QLPingJiaScoreItem alloc] init];
+    itScore.scoreText = self.commentsData[@"score"];
+    [section0 addItem:itScore];
+    
+    QLPingJiaDescItem *itDesc = [[QLPingJiaDescItem alloc] init];
+    itDesc.descText = self.commentsData[@"comments"];
+    [section0 addItem:itDesc];
     
     [sectionArray addObject:section0];
     [self.formManager replaceSectionsWithSectionsFromArray:sectionArray];

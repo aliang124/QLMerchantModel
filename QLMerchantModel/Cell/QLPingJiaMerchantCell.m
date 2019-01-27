@@ -6,8 +6,7 @@
 //  Copyright © 2017年 jienliang. All rights reserved.
 //
 #import "QLPingJiaMerchantCell.h"
-#import "WTBaseCore.h"
-#import "QLBusiness.h"
+#import "UIImageView+WebImage.h"
 
 @implementation QLPingJiaMerchantItem
 - (id)init{
@@ -80,6 +79,7 @@
 - (void)cellWillAppear
 {
     [super cellWillAppear];
+    [iconImg setWebImageWithUrl:@"https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1542593731&di=392abf890c5d3d1e8ae849cb0091500c&imgtype=jpg&er=1&src=http%3A%2F%2Fimgsrc.baidu.com%2Fimgad%2Fpic%2Fitem%2F960a304e251f95cada6c0462c3177f3e6609524c.jpg" placeHolder:nil];
     nameLab.text = [WTUtil strRelay:self.item.info[@"businessName"]];
     //下面的布局
     tagLab.top = 48;
@@ -99,10 +99,5 @@
     distanceLab.height = tagLab.height;
     distanceLab.top = tagLab.top;
     distanceLab.left = bgView.width-distanceLab.width-10;
-}
-
-- (void)layoutSubviews
-{
-    [super layoutSubviews];
 }
 @end
