@@ -11,29 +11,32 @@
 #import "QLPingJiaHeadView.h"
 
 @interface QLPingJiaDetailViewController ()
-@property (nonatomic,copy) NSDictionary *businessInfo;
+@property (nonatomic,copy) NSDictionary *commentsData;
 @end
 
 @implementation QLPingJiaDetailViewController
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    self.navBar.title = @"评价详情";    
-    [self initForm];
+    self.navBar.title = @"评价详情";
+    [self getData];
 }
 
 - (void)getData {
-//    [WTLoadingView1 showLoadingInView:self.view];
-//    [QLMerchantNetWorkingUtil getBusinessDetail:self.businessId successHandler:^(id json) {
-//        [WTLoadingView1 hideAllLoadingForView:self.view];
-//        self.businessInfo = json[@"businessInfo"][0];
-//        [self initForm];
-//    } failHandler:^(NSString *message) {
-//        [WTLoadingView1 hideAllLoadingForView:self.view];
-//        [WTLoadFailView showFailInView:self.view retryPress:^{
-//            [self getData];
-//        }];
-//    }];
+    [WTLoadingView1 showLoadingInView:self.view top:WT_NavBar_Height];
+    NSMutableDictionary *param = [NSMutableDictionary dictionary];
+    [param setObject:[WTUtil strRelay:self.businessId] forKey:@"businessId"];
+    [param setObject:[WTUtil strRelay:self.commentId] forKey:@"commentsId"];
+    [QLMerchantNetWorkingUtil getPingJiaDetail:param successHandler:^(id json) {
+        [WTLoadingView1 hideAllLoadingForView:self.view];
+        self.commentsData = json[@"commentsData"];
+        [self initForm];
+    } failHandler:^(NSString *message) {
+        [WTLoadingView1 hideAllLoadingForView:self.view];
+        [WTLoadFailView showFailInView:self.view retryPress:^{
+            [self getData];
+        }];
+    }];
 }
 
 - (void)initForm {

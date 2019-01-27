@@ -108,6 +108,7 @@
         it.selectionHandler = ^(QLPingJiaListItem *item) {
             QLPingJiaDetailViewController *vc = [[QLPingJiaDetailViewController alloc] init];
             vc.businessId = bself.businessId;
+            vc.commentId = item.info[@"commentsId"];
             [bself.navigationController pushViewController:vc animated:YES];
         };
         [section0 addItem:it];

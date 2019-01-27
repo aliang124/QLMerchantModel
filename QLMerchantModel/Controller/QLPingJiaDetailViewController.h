@@ -11,5 +11,6 @@
 #import "WTLoadFailEmpty.h"
 
 @interface QLPingJiaDetailViewController : QLFormViewController
-@property (nonatomic,copy) NSString *businessId;
+@property (nonatomic,copy) NSString *businessId;//业务id
+@property (nonatomic,copy) NSString *commentId;//评论id
 @end
