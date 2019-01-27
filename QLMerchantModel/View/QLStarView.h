@@ -19,4 +19,5 @@
 
 @property (nonatomic,assign) int starCount;
 - (id)initWithPoint:(CGPoint)pt;
+- (id)initWithOrgPoint:(CGPoint)pt;
 @end

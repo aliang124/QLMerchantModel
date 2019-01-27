@@ -14,7 +14,7 @@
 @implementation QLPingJiaListItem
 - (id)init{
     if (self = [super init]) {
-        self.cellHeight = 32;
+        self.cellHeight = 100;
     }
     return self;
 }
@@ -23,6 +23,12 @@
 
 @interface QLPingJiaListCell()
 {
+    //用户信息
+    UIView *userInfoView;
+    UIImageView *userIcon;
+    UILabel *userNameLab;
+    UILabel *dateLab;
+    //
     UIView *headPingJiaView;
     QLStarView *starView;
     UILabel *scoreLab;
@@ -44,33 +50,63 @@
 - (void)cellDidLoad
 {
     [super cellDidLoad];
+    //用户头像区域
+    [self createUserInfoView];
     [self createSocreArea];
     [self createDescLab];
     [self createBottomView];
     
-    lineImg = [[UIImageView alloc] initWithFrame:CGRectMakes(12, 0, 360-12-12, 0.5)];
+    lineImg = [[UIImageView alloc] initWithFrame:CGRectMake(12, 0, WTScreenWidth-12-12, 0.5)];
     lineImg.backgroundColor = QL_Border_LineColor;
     [self.contentView addSubview:lineImg];
-
 }
 
 - (void)cellWillAppear
 {
     [super cellWillAppear];
+    [self setUserInfo];
     [self setScoreAreaValue];
+
     descLab.text = [WTUtil strRelay:self.item.descText];
     [descLab sizeToFit];
+
     [self createPictures];
-    
     float pictureHeight = 0;
     if (self.item.pictureArray.count>0) {
-        pictureHeight = 96*QL_MULPITLE;
+        pictureHeight = (88*QL_MULPITLE)+8;
     }
-    self.item.cellHeight = descLab.bottom+pictureHeight+(28*QL_MULPITLE);
-    
-    bottomView.top = self.item.cellHeight- (28*QL_MULPITLE);
+    self.item.cellHeight = descLab.bottom+pictureHeight+28;
+    bottomView.top = self.item.cellHeight-28;
     [self setBottomView];
-    lineImg.top = self.item.cellHeight-(0.5*QL_MULPITLE);
+    lineImg.top = self.item.cellHeight-0.5;
+}
+
+- (void)createUserInfoView {
+    userInfoView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, WTScreenWidth, 36)];
+    userInfoView.userInteractionEnabled = NO;
+    [self.contentView addSubview:userInfoView];
+    
+    userIcon = [[UIImageView alloc] initWithFrame:CGRectMake(16, 8, 28, 28)];
+    userIcon.layer.cornerRadius = 14;
+    userIcon.layer.masksToBounds = YES;
+    [userInfoView addSubview:userIcon];
+    
+    userNameLab = [[UILabel alloc] initWithFrame:CGRectMake(50, 15, WTScreenWidth-50-108, 11)];
+    userNameLab.font = WTFontSys(12);
+    userNameLab.textColor = QL_UserName_TitleColor_Black;
+    [userInfoView addSubview:userNameLab];
+
+    dateLab = [[UILabel alloc] initWithFrame:CGRectMake(WTScreenWidth-32-76, 19, 76, 9)];
+    dateLab.font = WTFontSys(10);
+    dateLab.textAlignment = NSTextAlignmentRight;
+    dateLab.textColor = QL_DateTextColor_Gray;
+    [userInfoView addSubview:dateLab];
+}
+
+- (void)setUserInfo {
+    [userIcon setWebImageWithUrl:@"https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1542593731&di=392abf890c5d3d1e8ae849cb0091500c&imgtype=jpg&er=1&src=http%3A%2F%2Fimgsrc.baidu.com%2Fimgad%2Fpic%2Fitem%2F960a304e251f95cada6c0462c3177f3e6609524c.jpg" placeHolder:nil];
+    userNameLab.text = @"阿三";
+    dateLab.text = @"11月22日 12:22";
 }
 
 - (void)setBottomView {
@@ -78,40 +114,40 @@
     liuYanCountLab.text = [WTUtil strRelay:self.item.dianZanCount];
     [liuYanCountLab sizeToFit];
     liuYanCountLab.top = (bottomView.height-liuYanCountLab.height)/2;
-    liuYanCountLab.left = WTScreenWidth-(16*QL_MULPITLE)-liuYanCountLab.width;
+    liuYanCountLab.left = WTScreenWidth-16-liuYanCountLab.width;
     
-    liuYanIcon.top = 9*QL_MULPITLE;
-    liuYanIcon.left = liuYanCountLab.left-(15*QL_MULPITLE);
+    liuYanIcon.top = 9;
+    liuYanIcon.left = liuYanCountLab.left-15;
     //评论数
     liulanCountLab.text = [WTUtil strRelay:self.item.viewCount];
-    liulanCountLab.top = 9*QL_MULPITLE;
+    liulanCountLab.top = 9;
     [liulanCountLab sizeToFit];
-    liulanCountLab.left = liuYanIcon.left-(16*QL_MULPITLE)-liulanCountLab.width;
+    liulanCountLab.left = liuYanIcon.left-16-liulanCountLab.width;
     
-    liulanIcon.top = 9*QL_MULPITLE;
-    liulanIcon.left = liulanCountLab.left-(15*QL_MULPITLE);
+    liulanIcon.top = 9;
+    liulanIcon.left = liulanCountLab.left-15;
 }
 
 - (void)createBottomView {
-    bottomView = [[UIView alloc] initWithFrame:CGRectMakes(0, 0, 360, 28)];
+    bottomView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, WTScreenWidth, 28)];
     bottomView.userInteractionEnabled = NO;
     [self.contentView addSubview:bottomView];
     //留言数
-    liuYanCountLab = [[UILabel alloc] initWithFrame:CGRectMakes(360-12, 9, 9, 7)];
-    liuYanCountLab.font = WTFontSys(10*QL_MULPITLE);
+    liuYanCountLab = [[UILabel alloc] initWithFrame:CGRectMake(WTScreenWidth-12, 9, 9, 7)];
+    liuYanCountLab.font = WTFontSys(10);
     liuYanCountLab.textColor = QL_DescColor_Gray;
     [bottomView addSubview:liuYanCountLab];
     
-    liuYanIcon = [[UIImageView alloc] initWithFrame:CGRectMakes(0, 0, 10, 10)];
+    liuYanIcon = [[UIImageView alloc] initWithFrame:CGRectMake(0, 0, 10, 10)];
     [liuYanIcon setImage:[UIImage imageNamed:@"liuyan"]];
     
     //浏览数
-    liulanCountLab = [[UILabel alloc] initWithFrame:CGRectMakes(360-12, 9, 9, 7)];
-    liulanCountLab.font = WTFontSys(10*QL_MULPITLE);
+    liulanCountLab = [[UILabel alloc] initWithFrame:CGRectMake(WTScreenWidth-12, 9, 9, 7)];
+    liulanCountLab.font = WTFontSys(10);
     liulanCountLab.textColor = QL_DescColor_Gray;
     [bottomView addSubview:liulanCountLab];
     
-    liulanIcon = [[UIImageView alloc] initWithFrame:CGRectMakes(0, 0, 10, 10)];
+    liulanIcon = [[UIImageView alloc] initWithFrame:CGRectMake(0, 0, 10, 10)];
     [liulanIcon setImage:[UIImage imageNamed:@"liulan"]];
     [bottomView addSubview:liulanIcon];
     
@@ -121,7 +157,7 @@
 - (void)createPictures {
     [[self.contentView viewWithTag:12345] removeFromSuperview];
     if (self.item.pictureArray.count>0) {
-        UIView *pictureView = [[UIView alloc] initWithFrame:CGRectMake(0, descLab.bottom+(8*QL_MULPITLE), WTScreenWidth, 88*QL_MULPITLE)];
+        UIView *pictureView = [[UIView alloc] initWithFrame:CGRectMake(0, descLab.bottom+8, WTScreenWidth, 88*QL_MULPITLE)];
         pictureView.userInteractionEnabled = NO;
         pictureView.tag = 12345;
         [self.contentView addSubview:pictureView];
@@ -130,7 +166,7 @@
         for (int i = 0; i < self.item.pictureArray.count; i++) {
             offsetX = 16+(i*100)+(i*14);
             
-            UIButton *picBtn = [[UIButton alloc] initWithFrame:CGRectMakes(offsetX, 0, 100, 88)];
+            UIButton *picBtn = [[UIButton alloc] initWithFrame:CGRectMake(offsetX, 0, 100*QL_MULPITLE, 88*QL_MULPITLE)];
             picBtn.backgroundColor = [UIColor redColor];
             [pictureView addSubview:picBtn];
         }
@@ -138,32 +174,31 @@
 }
 
 - (void)createDescLab {
-    descLab = [[UILabel alloc] initWithFrame:CGRectMakes(16, 32, 360-16-21, 12)];
-    descLab.font = WTFontSys(QL_MULPITLE*12);
+    descLab = [[UILabel alloc] initWithFrame:CGRectMake(16, 62, WTScreenWidth-16-21, 12)];
+    descLab.font = WTFontSys(12);
     descLab.textColor = QL_DescColor_Gray;
     descLab.numberOfLines = 0;
     [self.contentView addSubview:descLab];
 }
 
 - (void)createSocreArea {
-    headPingJiaView = [[UIView alloc] initWithFrame:CGRectMakes(0, 0, 360, 32)];
+    headPingJiaView = [[UIView alloc] initWithFrame:CGRectMake(0, userInfoView.bottom, WTScreenWidth, 26)];
     headPingJiaView.userInteractionEnabled = NO;
     [self.contentView addSubview:headPingJiaView];
     
-    UILabel *pingFenLab = [[UILabel alloc] initWithFrame:CGRectMakes(15, 0, 100, 32)];
-    pingFenLab.font = WTFontSys(QL_MULPITLE*10);
+    UILabel *pingFenLab = [[UILabel alloc] initWithFrame:CGRectMake(15, 7, 100, 9)];
+    pingFenLab.font = WTFontSys(10);
     pingFenLab.text = @"评分:";
     pingFenLab.textColor = QL_DescColor_Gray;
     [headPingJiaView addSubview:pingFenLab];
     [pingFenLab sizeToFit];
-    pingFenLab.top = (headPingJiaView.height-pingFenLab.height)/2;
+    pingFenLab.top = 7;
     
-    CGPoint pt = CGPointMake(pingFenLab.right+(7*QL_MULPITLE), 11.5*QL_MULPITLE);
-    starView = [[QLStarView alloc] initWithPoint:pt];
+    starView = [[QLStarView alloc] initWithOrgPoint:CGPointMake(pingFenLab.right+7, 7)];
     [headPingJiaView addSubview:starView];
     
-    scoreLab = [[UILabel alloc] initWithFrame:CGRectMake(starView.right+11, 0, 100, headPingJiaView.height)];
-    scoreLab.font = WTFontSys(QL_MULPITLE*10);
+    scoreLab = [[UILabel alloc] initWithFrame:CGRectMake(starView.right+11, 7, 100, 9)];
+    scoreLab.font = WTFontSys(10);
     scoreLab.textColor = QL_DescColor_Gray;
     [headPingJiaView addSubview:scoreLab];
 }

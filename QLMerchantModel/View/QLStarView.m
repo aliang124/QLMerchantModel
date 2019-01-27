@@ -36,6 +36,31 @@
     return self;
 }
 
+- (id)initWithOrgPoint:(CGPoint)pt {
+    CGRect frame = CGRectMakes(pt.x, pt.y, 61, 9);
+    self = [super initWithFrame:frame];
+    if (self) {
+        self.userInteractionEnabled = NO;
+        self.starCount = 0;
+        
+        starImg1 = [[UIImageView alloc] initWithFrame:CGRectMake(0, 0, 9, 9)];
+        [self addSubview:starImg1];
+        
+        starImg2 = [[UIImageView alloc] initWithFrame:CGRectMake(13, 0, 9, 9)];
+        [self addSubview:starImg2];
+        
+        starImg3 = [[UIImageView alloc] initWithFrame:CGRectMake(26, 0, 9, 9)];
+        [self addSubview:starImg3];
+        
+        starImg4 = [[UIImageView alloc] initWithFrame:CGRectMake(39, 0, 9, 9)];
+        [self addSubview:starImg4];
+        
+        starImg5 = [[UIImageView alloc] initWithFrame:CGRectMake(52, 0, 9, 9)];
+        [self addSubview:starImg5];
+    }
+    return self;
+}
+
 - (void)layoutSubviews {
     [super layoutSubviews];
     [starImg1 setImage:[UIImage imageNamed:@"starGray"]];
