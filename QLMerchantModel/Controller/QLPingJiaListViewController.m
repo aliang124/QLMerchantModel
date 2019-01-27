@@ -13,6 +13,8 @@
 #import "WTLoadFailEmpty.h"
 #import <MJRefresh.h>
 #import "QLPingJiaListCell.h"
+#import "QLPingJiaDetailViewController.h"
+
 @interface QLPingJiaListViewController ()
 @property (nonatomic,strong) QLPingJiaHeadView *headView;
 @property (nonatomic,assign) BOOL isFromRefresh;
@@ -103,6 +105,11 @@
         if (i==0) {
             it.pictureArray = [NSArray arrayWithObjects:@"",@"",@"", nil];
         }
+        it.selectionHandler = ^(QLPingJiaListItem *item) {
+            QLPingJiaDetailViewController *vc = [[QLPingJiaDetailViewController alloc] init];
+            vc.businessId = bself.businessId;
+            [bself.navigationController pushViewController:vc animated:YES];
+        };
         [section0 addItem:it];
     }
     
