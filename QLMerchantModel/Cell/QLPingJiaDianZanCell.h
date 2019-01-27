@@ -8,6 +8,8 @@
 #import "WTBaseCore.h"
 #import "QLBusiness.h"
 @interface QLPingJiaDianZanItem : RETableViewItem
+@property (nonatomic,assign) BOOL isHuiFuTitle;
+@property (nonatomic,copy) NSString *count;
 @end
 
 @interface QLPingJiaDianZanCell : RETableViewCell

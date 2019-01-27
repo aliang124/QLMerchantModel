@@ -15,6 +15,7 @@
 #import "QLPingJiaScoreCell.h"
 #import "QLPingJiaDescCell.h"
 #import "QLPingJiaDianZanCell.h"
+#import "QLPingJiaHuiFuCell.h"
 @interface QLPingJiaDetailViewController ()
 @property (nonatomic,copy) NSDictionary *commentsData;
 @end
@@ -30,6 +31,7 @@
     self.formManager[@"QLPingJiaScoreItem"] = @"QLPingJiaScoreCell";
     self.formManager[@"QLPingJiaDescItem"] = @"QLPingJiaDescCell";
     self.formManager[@"QLPingJiaDianZanItem"] = @"QLPingJiaDianZanCell";
+    self.formManager[@"QLPingJiaHuiFuItem"] = @"QLPingJiaHuiFuCell";
     [self getData];
 }
 
@@ -82,7 +84,21 @@
     [section0 addItem:[WTEmptyItem initWithHeight:8]];
     
     QLPingJiaDianZanItem *itZan = [[QLPingJiaDianZanItem alloc] init];
+    itZan.count = self.commentsData[@"praiseNumber"];
     [section0 addItem:itZan];
+    
+    [section0 addItem:[WTEmptyItem initWithHeight:8]];
+
+    QLPingJiaDianZanItem *itHuiFuTitle = [[QLPingJiaDianZanItem alloc] init];
+    itHuiFuTitle.isHuiFuTitle = YES;
+    itHuiFuTitle.count = self.commentsData[@"replyNumber"];
+    itHuiFuTitle.cellHeight = 42;
+    [section0 addItem:itHuiFuTitle];
+
+    for (int i = 0; i < 5; i++) {
+        QLPingJiaHuiFuItem *itHuiFu = [[QLPingJiaHuiFuItem alloc] init];
+        [section0 addItem:itHuiFu];
+    }
     
     [sectionArray addObject:section0];
     [self.formManager replaceSectionsWithSectionsFromArray:sectionArray];

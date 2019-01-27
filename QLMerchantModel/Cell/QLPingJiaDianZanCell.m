@@ -7,12 +7,12 @@
 //
 #import "QLPingJiaDianZanCell.h"
 #import "UIImageView+WebImage.h"
-#import "QLStarView.h"
 
 @implementation QLPingJiaDianZanItem
 - (id)init{
     if (self = [super init]) {
         self.cellHeight = 52;
+        self.isHuiFuTitle = NO;
     }
     return self;
 }
@@ -49,8 +49,18 @@
 - (void)cellWillAppear
 {
     [super cellWillAppear];
-    titleLab.text = @"点赞 （1234）";
-    [self createUsers];
+    titleLab.frame = CGRectMake(41, 19, 200, 14);
+    self.item.cellHeight = 52;
+    if (self.item.isHuiFuTitle) {
+        iconImg.hidden = YES;
+        titleLab.text = [NSString stringWithFormat:@"评价回复 （%@）",[WTUtil strRelay:self.item.count]];
+        self.item.cellHeight = 42;
+        titleLab.frame = CGRectMake(12, 14, WTScreenWidth-12-12, 14);
+    } else {
+        iconImg.hidden = NO;
+        titleLab.text = [NSString stringWithFormat:@"点赞 （%@）",[WTUtil strRelay:self.item.count]];
+        [self createUsers];
+    }
 }
 
 - (void)createUsers {
