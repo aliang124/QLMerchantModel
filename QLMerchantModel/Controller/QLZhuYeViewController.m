@@ -9,6 +9,11 @@
 #import "QLZhuYeViewController.h"
 #import "QLMerchantNetWorkingUtil.h"
 #import "QLZhuYeHeadCell.h"
+#import "QLZhuYeBarCell.h"
+#import "QLZhuYeBar1Cell.h"
+#import "QLZhuYeGoodCell.h"
+#import <CTMediator.h>
+
 @interface QLZhuYeViewController ()
 @property (nonatomic,copy) NSDictionary *memberInfo;
 @end
@@ -19,6 +24,9 @@
     [super viewDidLoad];
     self.navBar.title = @"个人主页";
     self.formManager[@"QLZhuYeHeadItem"] = @"QLZhuYeHeadCell";
+    self.formManager[@"QLZhuYeBarItem"] = @"QLZhuYeBarCell";
+    self.formManager[@"QLZhuYeBar1Item"] = @"QLZhuYeBar1Cell";
+    self.formManager[@"QLZhuYeGoodItem"] = @"QLZhuYeGoodCell";
 //    [self getData];
     [self initForm];
 }
@@ -53,7 +61,25 @@
     QLZhuYeHeadItem *itZhuYe = [[QLZhuYeHeadItem alloc] init];
     [section0 addItem:itZhuYe];
     
+    QLZhuYeBarItem *itBar = [[QLZhuYeBarItem alloc] init];
+    [section0 addItem:itBar];
+
+    QLZhuYeBar1Item *itBar1 = [[QLZhuYeBar1Item alloc] init];
+    itBar1.type = 0;
+    [section0 addItem:itBar1];
+
+    [section0 addItem:[WTEmptyItem initWithHeight:8]];
     
+    for (int i = 0; i < 4; i++) {
+        QLZhuYeGoodItem *itGood = [[QLZhuYeGoodItem alloc] init];
+        itGood.selectionHandler = ^(QLZhuYeGoodItem *item) {
+            UIViewController *vc = [[CTMediator sharedInstance] performTarget:@"QLTieBaModel" action:@"tieBaDetailVC" params:nil shouldCacheTarget:NO];
+            [bself.navigationController pushViewController:vc animated:YES];
+        };
+        [section0 addItem:itGood];
+    }
+    
+    [section0 addItem:[WTEmptyItem initWithHeight:8]];
     
     [sectionArray addObject:section0];
     [self.formManager replaceSectionsWithSectionsFromArray:sectionArray];
