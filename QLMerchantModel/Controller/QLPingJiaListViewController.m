@@ -12,7 +12,7 @@
 #import "QLMerchantNetWorkingUtil.h"
 #import "WTLoadFailEmpty.h"
 #import <MJRefresh.h>
-#import "QLPingJiaCell.h"
+#import "QLPingJiaListCell.h"
 @interface QLPingJiaListViewController ()
 @property (nonatomic,strong) QLPingJiaHeadView *headView;
 @property (nonatomic,assign) BOOL isFromRefresh;
@@ -25,7 +25,7 @@
     [super viewDidLoad];
     self.navBar.title = @"全部评价";
     self.type = 1;
-    self.formManager[@"QLPingJiaItem"] = @"QLPingJiaCell";
+    self.formManager[@"QLPingJiaListItem"] = @"QLPingJiaListCell";
     
     WT(bself);
     _headView = [[QLPingJiaHeadView alloc] initWithFrame:CGRectMake(0, WT_NavBar_Height, WTScreenWidth, 46)];
@@ -94,14 +94,14 @@
     for (int i = 0; i < self.listArray.count; i++) {
         NSDictionary *dic = self.listArray[i];
         
-        QLPingJiaItem *it = [[QLPingJiaItem alloc] init];
+        QLPingJiaListItem *it = [[QLPingJiaListItem alloc] init];
         it.info = dic;
         it.scoreText = dic[@"score"];
         it.descText = dic[@"comments"];
         it.viewCount = dic[@"commentsNumber"];
         it.dianZanCount = dic[@"praiseNumber"];
         if (i==0) {
-            it.pictureArray = [NSArray arrayWithObjects:@"",@"", nil];
+            it.pictureArray = [NSArray arrayWithObjects:@"",@"",@"", nil];
         }
         [section0 addItem:it];
     }
