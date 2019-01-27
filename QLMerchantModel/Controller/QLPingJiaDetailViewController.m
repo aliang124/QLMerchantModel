@@ -74,6 +74,12 @@
     itDesc.descText = self.commentsData[@"comments"];
     [section0 addItem:itDesc];
     
+    WTEmptyItem *itEmp = [WTEmptyItem initWithHeight:11];
+    itEmp.bgColor = [UIColor whiteColor];
+    [section0 addItem:itEmp];
+    
+    [section0 addItem:[WTEmptyItem initWithHeight:8]];
+    
     [sectionArray addObject:section0];
     [self.formManager replaceSectionsWithSectionsFromArray:sectionArray];
     [self.formTable reloadData];
