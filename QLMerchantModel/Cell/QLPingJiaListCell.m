@@ -105,8 +105,13 @@
 
 - (void)setUserInfo {
     [userIcon setWebImageWithUrl:@"https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1542593731&di=392abf890c5d3d1e8ae849cb0091500c&imgtype=jpg&er=1&src=http%3A%2F%2Fimgsrc.baidu.com%2Fimgad%2Fpic%2Fitem%2F960a304e251f95cada6c0462c3177f3e6609524c.jpg" placeHolder:nil];
-    userNameLab.text = @"阿三";
-    dateLab.text = @"11月22日 12:22";
+    userNameLab.text = [WTUtil strRelay:self.item.info[@"memberName"]];
+    NSString *dateString = [WTUtil strRelay:self.item.info[@"createTime"]];
+    NSDate *dd = [WTDateUtil string2Date:dateString format:@"yyyy-MM-dd HH:mm:ss"];
+    NSString *dateDay = [WTDateUtil date2String:dd format:@"MM-dd HH:mm"];
+    dateDay = [dateDay stringByReplacingOccurrencesOfString:@"-" withString:@"月"];
+    dateDay = [NSString stringWithFormat:@"%@日",dateDay];
+    dateLab.text = dateDay;
 }
 
 - (void)setBottomView {
@@ -164,7 +169,7 @@
         
         float offsetX = 16;
         for (int i = 0; i < self.item.pictureArray.count; i++) {
-            offsetX = 16+(i*100)+(i*14);
+            offsetX = 16+(i*100*QL_MULPITLE)+(i*14);
             
             UIButton *picBtn = [[UIButton alloc] initWithFrame:CGRectMake(offsetX, 0, 100*QL_MULPITLE, 88*QL_MULPITLE)];
             picBtn.backgroundColor = [UIColor redColor];
