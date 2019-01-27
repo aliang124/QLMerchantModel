@@ -36,17 +36,22 @@
 
 - (void)createBottomView {
     _bottomView = [[QLBottomView alloc] initWithFrame:CGRectMake(0, WTScreenHeight-54-WT_SafeArea_BOTTOM, WTScreenWidth, 54+WT_SafeArea_BOTTOM)];
+    _bottomView.businessId = self.businessId;
     _bottomView.backgroundColor = [UIColor whiteColor];
     [self.view addSubview:_bottomView];
 }
 
 - (void)getData {
+    self.bottomView.hidden = YES;
     [WTLoadingView1 showLoadingInView:self.view top:WT_NavBar_Height];
     [QLMerchantNetWorkingUtil getBusinessDetail:self.businessId successHandler:^(id json) {
         [WTLoadingView1 hideAllLoadingForView:self.view];
         self.businessInfo = json[@"businessInfo"];
+        self.bottomView.hidden = NO;
+        self.bottomView.info = json[@"businessInfo"];
         [self initForm];
     } failHandler:^(NSString *message) {
+        self.bottomView.hidden = YES;
         [WTLoadingView1 hideAllLoadingForView:self.view];
         [WTLoadFailView showFailInView:self.view retryPress:^{
             [self getData];

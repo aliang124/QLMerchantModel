@@ -11,5 +11,6 @@
 #import "QLBusiness.h"
 
 @interface QLBottomView : UIView
-
+@property (nonatomic,copy) id info;
+@property (nonatomic,copy) NSString *businessId;
 @end

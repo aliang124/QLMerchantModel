@@ -17,7 +17,7 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     self.navBar.title = @"主页";
-    [self getData];
+//    [self getData];
 }
 
 - (void)getData {

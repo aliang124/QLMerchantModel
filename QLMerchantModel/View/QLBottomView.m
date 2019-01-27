@@ -55,6 +55,7 @@
 
 - (void)goToZhuYe {
     QLZhuYeViewController *zhu = [[QLZhuYeViewController alloc] init];
+    zhu.businessId = self.businessId;
     WTRootNavPush(zhu);
 }
 
