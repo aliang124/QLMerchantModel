@@ -8,6 +8,7 @@
 #import "WTBaseCore.h"
 #import "QLBusiness.h"
 @interface QLPingJiaHuiFuItem : RETableViewItem
+@property (nonatomic,copy) id info;
 @end
 
 @interface QLPingJiaHuiFuCell : RETableViewCell

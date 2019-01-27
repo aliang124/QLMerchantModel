@@ -23,6 +23,7 @@
 {
     UIImageView *iconImg;
     UILabel *titleLab;
+    UIImageView *lineImg;
 }
 @end
 
@@ -41,6 +42,10 @@
     titleLab.font = WTFontSys(14);
     titleLab.textColor = QL_DescColor_Gray;
     [self.contentView addSubview:titleLab];
+    
+    lineImg = [[UIImageView alloc] initWithFrame:CGRectMake(0, 0, WTScreenWidth, 0.5)];
+    lineImg.backgroundColor = QL_TableView_LineColor;
+    [self.contentView addSubview:lineImg];
 }
 
 - (void)setSelected:(BOOL)selected animated:(BOOL)animated{}
@@ -53,11 +58,14 @@
     self.item.cellHeight = 52;
     if (self.item.isHuiFuTitle) {
         iconImg.hidden = YES;
+        lineImg.hidden = NO;
+        lineImg.top = 41.5;
         titleLab.text = [NSString stringWithFormat:@"评价回复 （%@）",[WTUtil strRelay:self.item.count]];
         self.item.cellHeight = 42;
         titleLab.frame = CGRectMake(12, 14, WTScreenWidth-12-12, 14);
     } else {
         iconImg.hidden = NO;
+        lineImg.hidden = YES;
         titleLab.text = [NSString stringWithFormat:@"点赞 （%@）",[WTUtil strRelay:self.item.count]];
         [self createUsers];
     }

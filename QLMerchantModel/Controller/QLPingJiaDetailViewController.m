@@ -100,6 +100,7 @@
         [section0 addItem:itHuiFu];
     }
     
+    [section0 addItem:[WTEmptyItem initWithHeight:8]];
     [sectionArray addObject:section0];
     [self.formManager replaceSectionsWithSectionsFromArray:sectionArray];
     [self.formTable reloadData];
