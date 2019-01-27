@@ -77,10 +77,10 @@
             [bself.navigationController pushViewController:vc animated:YES];
         };
         [section0 addItem:itGood];
+
+        [section0 addItem:[WTEmptyItem initWithHeight:8]];
     }
-    
-    [section0 addItem:[WTEmptyItem initWithHeight:8]];
-    
+        
     [sectionArray addObject:section0];
     [self.formManager replaceSectionsWithSectionsFromArray:sectionArray];
     [self.formTable reloadData];
