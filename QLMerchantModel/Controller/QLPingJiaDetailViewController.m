@@ -14,7 +14,7 @@
 #import "QLPingJiaMerchantCell.h"
 #import "QLPingJiaScoreCell.h"
 #import "QLPingJiaDescCell.h"
-
+#import "QLPingJiaDianZanCell.h"
 @interface QLPingJiaDetailViewController ()
 @property (nonatomic,copy) NSDictionary *commentsData;
 @end
@@ -29,6 +29,7 @@
     self.formManager[@"QLPingJiaMerchantItem"] = @"QLPingJiaMerchantCell";
     self.formManager[@"QLPingJiaScoreItem"] = @"QLPingJiaScoreCell";
     self.formManager[@"QLPingJiaDescItem"] = @"QLPingJiaDescCell";
+    self.formManager[@"QLPingJiaDianZanItem"] = @"QLPingJiaDianZanCell";
     [self getData];
 }
 
@@ -79,6 +80,9 @@
     [section0 addItem:itEmp];
     
     [section0 addItem:[WTEmptyItem initWithHeight:8]];
+    
+    QLPingJiaDianZanItem *itZan = [[QLPingJiaDianZanItem alloc] init];
+    [section0 addItem:itZan];
     
     [sectionArray addObject:section0];
     [self.formManager replaceSectionsWithSectionsFromArray:sectionArray];
