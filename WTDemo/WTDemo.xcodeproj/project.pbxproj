@@ -28,6 +28,7 @@
 		5064B02421FD7E2800B96181 /* QLPingJiaDescCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 5064B02221FD7E2800B96181 /* QLPingJiaDescCell.m */; };
 		5064B02721FDA04600B96181 /* QLPingJiaDianZanCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 5064B02521FDA04600B96181 /* QLPingJiaDianZanCell.m */; };
 		5064B02A21FDADCB00B96181 /* QLPingJiaHuiFuCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 5064B02921FDADCA00B96181 /* QLPingJiaHuiFuCell.m */; };
+		5064B02D21FDEA5900B96181 /* QLZhuYeHeadCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 5064B02C21FDEA5900B96181 /* QLZhuYeHeadCell.m */; };
 		50DADCE12192811A00DA8BFE /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 50DADCE02192811A00DA8BFE /* AppDelegate.m */; };
 		50DADCE92192811B00DA8BFE /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 50DADCE82192811B00DA8BFE /* Assets.xcassets */; };
 		50DADCEC2192811B00DA8BFE /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 50DADCEA2192811B00DA8BFE /* LaunchScreen.storyboard */; };
@@ -88,6 +89,8 @@
 		5064B02621FDA04600B96181 /* QLPingJiaDianZanCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QLPingJiaDianZanCell.h; sourceTree = "<group>"; };
 		5064B02821FDADCA00B96181 /* QLPingJiaHuiFuCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QLPingJiaHuiFuCell.h; sourceTree = "<group>"; };
 		5064B02921FDADCA00B96181 /* QLPingJiaHuiFuCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QLPingJiaHuiFuCell.m; sourceTree = "<group>"; };
+		5064B02B21FDEA5900B96181 /* QLZhuYeHeadCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QLZhuYeHeadCell.h; sourceTree = "<group>"; };
+		5064B02C21FDEA5900B96181 /* QLZhuYeHeadCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QLZhuYeHeadCell.m; sourceTree = "<group>"; };
 		50DADCDC2192811A00DA8BFE /* WTDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = WTDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		50DADCDF2192811A00DA8BFE /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		50DADCE02192811A00DA8BFE /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
@@ -223,6 +226,8 @@
 		50EE218021EA0B3E00E1D9D1 /* Cell */ = {
 			isa = PBXGroup;
 			children = (
+				5064B02B21FDEA5900B96181 /* QLZhuYeHeadCell.h */,
+				5064B02C21FDEA5900B96181 /* QLZhuYeHeadCell.m */,
 				5064B02821FDADCA00B96181 /* QLPingJiaHuiFuCell.h */,
 				5064B02921FDADCA00B96181 /* QLPingJiaHuiFuCell.m */,
 				5064B02621FDA04600B96181 /* QLPingJiaDianZanCell.h */,
@@ -451,6 +456,7 @@
 				50EE21A421EA580800E1D9D1 /* HomeCell.m in Sources */,
 				505F4B0621FB430F00F5B354 /* QLPingJiaCell.m in Sources */,
 				50EE218A21EA0CA600E1D9D1 /* QLMerchantDetailViewController.m in Sources */,
+				5064B02D21FDEA5900B96181 /* QLZhuYeHeadCell.m in Sources */,
 				5064B02421FD7E2800B96181 /* QLPingJiaDescCell.m in Sources */,
 				50EE218E21EA0FD600E1D9D1 /* Target_QLMerchantModel.m in Sources */,
 				50DADCEF2192811B00DA8BFE /* main.m in Sources */,

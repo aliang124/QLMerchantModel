@@ -11,5 +11,5 @@
 #import "WTLoadFailEmpty.h"
 
 @interface QLZhuYeViewController : QLFormViewController
-@property (nonatomic,copy) NSString *businessId;
+@property (nonatomic,copy) NSString *memberId;
 @end
