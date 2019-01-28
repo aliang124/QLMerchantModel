@@ -26,7 +26,6 @@
 		5064B01E21FD573800B96181 /* QLPingJiaMerchantCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 5064B01D21FD573800B96181 /* QLPingJiaMerchantCell.m */; };
 		5064B02121FD7BCC00B96181 /* QLPingJiaScoreCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 5064B02021FD7BCC00B96181 /* QLPingJiaScoreCell.m */; };
 		5064B02421FD7E2800B96181 /* QLPingJiaDescCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 5064B02221FD7E2800B96181 /* QLPingJiaDescCell.m */; };
-		5064B02721FDA04600B96181 /* QLPingJiaDianZanCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 5064B02521FDA04600B96181 /* QLPingJiaDianZanCell.m */; };
 		5064B02A21FDADCB00B96181 /* QLPingJiaHuiFuCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 5064B02921FDADCA00B96181 /* QLPingJiaHuiFuCell.m */; };
 		5064B02D21FDEA5900B96181 /* QLZhuYeHeadCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 5064B02C21FDEA5900B96181 /* QLZhuYeHeadCell.m */; };
 		5064B03021FDF01600B96181 /* QLZhuYeBarCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 5064B02F21FDF01600B96181 /* QLZhuYeBarCell.m */; };
@@ -88,8 +87,6 @@
 		5064B02021FD7BCC00B96181 /* QLPingJiaScoreCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QLPingJiaScoreCell.m; sourceTree = "<group>"; };
 		5064B02221FD7E2800B96181 /* QLPingJiaDescCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QLPingJiaDescCell.m; sourceTree = "<group>"; };
 		5064B02321FD7E2800B96181 /* QLPingJiaDescCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QLPingJiaDescCell.h; sourceTree = "<group>"; };
-		5064B02521FDA04600B96181 /* QLPingJiaDianZanCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QLPingJiaDianZanCell.m; sourceTree = "<group>"; };
-		5064B02621FDA04600B96181 /* QLPingJiaDianZanCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QLPingJiaDianZanCell.h; sourceTree = "<group>"; };
 		5064B02821FDADCA00B96181 /* QLPingJiaHuiFuCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QLPingJiaHuiFuCell.h; sourceTree = "<group>"; };
 		5064B02921FDADCA00B96181 /* QLPingJiaHuiFuCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QLPingJiaHuiFuCell.m; sourceTree = "<group>"; };
 		5064B02B21FDEA5900B96181 /* QLZhuYeHeadCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QLZhuYeHeadCell.h; sourceTree = "<group>"; };
@@ -245,8 +242,6 @@
 				5064B02C21FDEA5900B96181 /* QLZhuYeHeadCell.m */,
 				5064B02821FDADCA00B96181 /* QLPingJiaHuiFuCell.h */,
 				5064B02921FDADCA00B96181 /* QLPingJiaHuiFuCell.m */,
-				5064B02621FDA04600B96181 /* QLPingJiaDianZanCell.h */,
-				5064B02521FDA04600B96181 /* QLPingJiaDianZanCell.m */,
 				5064B02321FD7E2800B96181 /* QLPingJiaDescCell.h */,
 				5064B02221FD7E2800B96181 /* QLPingJiaDescCell.m */,
 				5064B01F21FD7BCC00B96181 /* QLPingJiaScoreCell.h */,
@@ -485,7 +480,6 @@
 				5064B03621FDF7E300B96181 /* QLZhuYeGoodCell.m in Sources */,
 				5064B01521FD33BF00B96181 /* QLPingJiaDetailViewController.m in Sources */,
 				5064B01221FD32FF00B96181 /* QLPingJiaListCell.m in Sources */,
-				5064B02721FDA04600B96181 /* QLPingJiaDianZanCell.m in Sources */,
 				5060B18C21FC288900CE93F4 /* QLBottomView.m in Sources */,
 				5064B01E21FD573800B96181 /* QLPingJiaMerchantCell.m in Sources */,
 				50EE218B21EA0CA600E1D9D1 /* QLMerchantListViewController.m in Sources */,
