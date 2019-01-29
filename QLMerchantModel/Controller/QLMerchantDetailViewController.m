@@ -11,6 +11,9 @@
 #import "QLPingJiaListViewController.h"
 @interface QLMerchantDetailViewController ()
 @property (nonatomic,copy) NSDictionary *businessInfo;
+@property (nonatomic,copy) NSArray *businessCommentsData;
+@property (nonatomic,copy) NSArray *businessGoodsData;
+@property (nonatomic,copy) NSArray *peripheryBusiness;
 @end
 
 @implementation QLMerchantDetailViewController
@@ -47,6 +50,9 @@
     [QLMerchantNetWorkingUtil getBusinessDetail:self.businessId successHandler:^(id json) {
         [WTLoadingView1 hideAllLoadingForView:self.view];
         self.businessInfo = json[@"businessInfo"];
+        self.businessCommentsData = json[@"businessCommentsData"];
+        self.businessGoodsData = json[@"businessGoodsData"];
+        self.peripheryBusiness = json[@"peripheryBusiness"];
         self.bottomView.hidden = NO;
         self.bottomView.info = json[@"businessInfo"];
         [self initForm];
@@ -80,27 +86,24 @@
     [section0 addItem:itInfo];
     
     QLMerchantTagStarItem *itStar = [[QLMerchantTagStarItem alloc] init];
+    itStar.info = self.businessInfo;
     [section0 addItem:itStar];
     
-    WTEmptyItem *itEmp = [[WTEmptyItem alloc] init];
-    itEmp.bgColor = [UIColor whiteColor];
-    itEmp.cellHeight = 11;
-    [section0 addItem:itEmp];
+    [section0 addItem:[WTEmptyItem initWithHeight:11 bgColor:[UIColor whiteColor]]];
     
     QLMerchantTagTimeItem *itTagTime = [[QLMerchantTagTimeItem alloc] init];
+    itTagTime.info = self.businessInfo;
     [section0 addItem:itTagTime];
     
     QLMerchantTagItem *itTag = [[QLMerchantTagItem alloc] init];
+    itTag.info = self.businessInfo;
     [section0 addItem:itTag];
     
     QLMerchantAddressPhoneItem *itAddressPhone = [[QLMerchantAddressPhoneItem alloc] init];
     [section0 addItem:itAddressPhone];
     
-    WTEmptyItem *itEmp1 = [[WTEmptyItem alloc] init];
-    itEmp1.bgColor = [UIColor whiteColor];
-    itEmp1.cellHeight = 17;
-    [section0 addItem:itEmp1];
-
+    [section0 addItem:[WTEmptyItem initWithHeight:17 bgColor:[UIColor whiteColor]]];
+    
     QLMerchantTitleItem *itTitleT = [[QLMerchantTitleItem alloc] init];
     [section0 addItem:itTitleT];
     
