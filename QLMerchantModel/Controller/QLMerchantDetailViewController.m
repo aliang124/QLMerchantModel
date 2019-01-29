@@ -137,11 +137,10 @@
     }
     
     //周边亲子
-    NSArray *qinZiArrays = [NSArray arrayWithObjects:@"",@"",@"",@"", nil];
-    if (qinZiArrays.count>0) {
+    if (self.peripheryBusiness && self.peripheryBusiness.count>0) {
         [section0 addItem:[WTEmptyItem initWithHeight:8]];
         QLMerchantQinZiItem *itQinZi = [[QLMerchantQinZiItem alloc] init];
-        itQinZi.qinZiArray = qinZiArrays;
+        itQinZi.qinZiArray = self.peripheryBusiness;
         [section0 addItem:itQinZi];
     }
     [section0 addItem:[WTEmptyItem initWithHeight:8]];
