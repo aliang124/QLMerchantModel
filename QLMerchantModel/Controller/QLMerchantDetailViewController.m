@@ -10,10 +10,10 @@
 #import "QLZhuYeViewController.h"
 #import "QLPingJiaListViewController.h"
 @interface QLMerchantDetailViewController ()
-@property (nonatomic,copy) NSDictionary *businessInfo;
-@property (nonatomic,copy) NSArray *businessCommentsData;
-@property (nonatomic,copy) NSArray *businessGoodsData;
-@property (nonatomic,copy) NSArray *peripheryBusiness;
+@property (nonatomic,copy) NSDictionary *businessInfo;//商家信息
+@property (nonatomic,copy) NSArray *businessCommentsData;//评论
+@property (nonatomic,copy) NSArray *businessGoodsData;//商品
+@property (nonatomic,copy) NSArray *peripheryBusiness;//周边亲子
 @end
 
 @implementation QLMerchantDetailViewController
@@ -117,15 +117,13 @@
     }
     
     //评价
-    NSArray *pingJiaArray = [NSArray arrayWithObjects:@"",@"",@"", nil];
-    if (pingJiaArray.count>0) {
+    if (self.businessCommentsData && self.businessCommentsData.count>0) {
         [section0 addItem:[WTEmptyItem initWithHeight:8]];
-        for (int i = 0; i < pingJiaArray.count; i++) {
+        for (int i = 0; i < self.businessCommentsData.count; i++) {
+            NSDictionary *dic = self.businessCommentsData[i];
             QLPingJiaItem *itPingJia = [[QLPingJiaItem alloc] init];
-            itPingJia.scoreText = [NSString stringWithFormat:@"%d",i+3];
-            if (i==0) {
-                itPingJia.pictureArray = pingJiaArray;
-            }
+            itPingJia.pictureArray = [NSArray arrayWithObjects:@"",@"",@"", nil];
+            itPingJia.info = dic;
             [section0 addItem:itPingJia];
         }
         QLMoreButtonItem *itMore = [[QLMoreButtonItem alloc] init];
