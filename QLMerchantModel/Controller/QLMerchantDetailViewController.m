@@ -100,6 +100,7 @@
     [section0 addItem:itTag];
     
     QLMerchantAddressPhoneItem *itAddressPhone = [[QLMerchantAddressPhoneItem alloc] init];
+    itAddressPhone.info = self.businessInfo;
     [section0 addItem:itAddressPhone];
     
     [section0 addItem:[WTEmptyItem initWithHeight:17 bgColor:[UIColor whiteColor]]];
