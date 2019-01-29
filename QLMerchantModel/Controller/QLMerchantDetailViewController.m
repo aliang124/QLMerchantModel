@@ -109,11 +109,10 @@
     [section0 addItem:itTitleT];
     
     //商品
-    NSArray *goodsArray = [NSArray arrayWithObjects:@"",@"",@"",@"", nil];
-    if (goodsArray.count>0) {
+    if (self.businessGoodsData && self.businessGoodsData.count>0) {
         [section0 addItem:[WTEmptyItem initWithHeight:8]];
         QLMerchantProductsItem *itProduct = [[QLMerchantProductsItem alloc] init];
-        itProduct.productArray = goodsArray;
+        itProduct.productArray = self.businessGoodsData;
         [section0 addItem:itProduct];
     }
     
