@@ -13,7 +13,6 @@
 		505F4B0621FB430F00F5B354 /* QLPingJiaCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 505F4B0521FB430F00F5B354 /* QLPingJiaCell.m */; };
 		505F4B0921FB5EE900F5B354 /* QLMoreButtonCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 505F4B0721FB5EE900F5B354 /* QLMoreButtonCell.m */; };
 		505F4B0C21FB626100F5B354 /* QLMerchantQinZiCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 505F4B0B21FB626100F5B354 /* QLMerchantQinZiCell.m */; };
-		5060B18921FC1C5900CE93F4 /* QLStarView.m in Sources */ = {isa = PBXBuildFile; fileRef = 5060B18821FC1C5900CE93F4 /* QLStarView.m */; };
 		5060B18C21FC288900CE93F4 /* QLBottomView.m in Sources */ = {isa = PBXBuildFile; fileRef = 5060B18B21FC288900CE93F4 /* QLBottomView.m */; };
 		5060B18F21FC525F00CE93F4 /* QLZhuYeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5060B18E21FC525F00CE93F4 /* QLZhuYeViewController.m */; };
 		5060B19221FC540900CE93F4 /* QLPingJiaViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5060B19121FC540900CE93F4 /* QLPingJiaViewController.m */; };
@@ -61,8 +60,6 @@
 		505F4B0821FB5EE900F5B354 /* QLMoreButtonCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QLMoreButtonCell.h; sourceTree = "<group>"; };
 		505F4B0A21FB626100F5B354 /* QLMerchantQinZiCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QLMerchantQinZiCell.h; sourceTree = "<group>"; };
 		505F4B0B21FB626100F5B354 /* QLMerchantQinZiCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QLMerchantQinZiCell.m; sourceTree = "<group>"; };
-		5060B18721FC1C5900CE93F4 /* QLStarView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = QLStarView.h; sourceTree = "<group>"; };
-		5060B18821FC1C5900CE93F4 /* QLStarView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = QLStarView.m; sourceTree = "<group>"; };
 		5060B18A21FC288900CE93F4 /* QLBottomView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = QLBottomView.h; sourceTree = "<group>"; };
 		5060B18B21FC288900CE93F4 /* QLBottomView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = QLBottomView.m; sourceTree = "<group>"; };
 		5060B18D21FC525F00CE93F4 /* QLZhuYeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QLZhuYeViewController.h; sourceTree = "<group>"; };
@@ -294,8 +291,6 @@
 		50EE218221EA0B3E00E1D9D1 /* View */ = {
 			isa = PBXGroup;
 			children = (
-				5060B18721FC1C5900CE93F4 /* QLStarView.h */,
-				5060B18821FC1C5900CE93F4 /* QLStarView.m */,
 				5060B18A21FC288900CE93F4 /* QLBottomView.h */,
 				5060B18B21FC288900CE93F4 /* QLBottomView.m */,
 				5060B1A221FC8E5500CE93F4 /* QLPingJiaHeadView.h */,
@@ -493,7 +488,6 @@
 				5064B02A21FDADCB00B96181 /* QLPingJiaHuiFuCell.m in Sources */,
 				505F4B0C21FB626100F5B354 /* QLMerchantQinZiCell.m in Sources */,
 				5060B18F21FC525F00CE93F4 /* QLZhuYeViewController.m in Sources */,
-				5060B18921FC1C5900CE93F4 /* QLStarView.m in Sources */,
 				50EE21B021EAFD1500E1D9D1 /* QLMerchantAddressPhoneCell.m in Sources */,
 				5064B03021FDF01600B96181 /* QLZhuYeBarCell.m in Sources */,
 			);

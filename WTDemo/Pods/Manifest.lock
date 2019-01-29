@@ -222,22 +222,22 @@ CHECKOUT OPTIONS:
     :commit: 727656369ad82ca2e04e22a759662b7baee2f8dd
     :git: https://github.com/aliang124/QLADLaunchModel.git
   QLBusiness:
-    :commit: fd2de7b3efe1861968471fa1b1ebf55f2e755020
+    :commit: 9ae7c9667b11a10f8db11ff31bcaed7a74231c31
     :git: https://github.com/aliang124/QLBusiness.git
   QLCareModel:
-    :commit: c054a43cb9f5484cf15b1eaf356773dada960d3c
+    :commit: 64e90b16284b330a0bea537bea32552133415464
     :git: https://github.com/aliang124/QLCareModel.git
   QLHomeModel:
-    :commit: 89fbd714b7ae1ec4a1fb9a7e4146f8dd8e94d9c0
+    :commit: b60d8e0f4d622d0d1fbdf6618a56954f0deecc64
     :git: https://github.com/aliang124/QLHomeModel.git
   QLLoginModel:
     :commit: 3bf589f808b95d0dcdd5c734c1305896552d34ff
     :git: https://github.com/aliang124/QLLoginModel.git
   QLMineModel:
-    :commit: 2415c49a17406a35ddb99ce2719a1caa7d5b82fc
+    :commit: 0ea19ad18522064b0922b1ac9d93a805a6ccc6ff
     :git: https://github.com/aliang124/QLMineModel.git
   QLTieBaModel:
-    :commit: 6eaf6cc7e96c76926d0281a37beec293307083c2
+    :commit: efa9934473e98687dcfe33c392cf05bf7027d0dc
     :git: https://github.com/aliang124/QLTieBaModel.git
   WTBaseCore:
     :commit: 5e10d00566080cb22b4acaef7c5bb0dea5a72bd9
