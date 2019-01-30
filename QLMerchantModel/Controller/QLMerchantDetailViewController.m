@@ -55,11 +55,12 @@
         self.peripheryBusiness = json[@"peripheryBusiness"];
         self.bottomView.hidden = NO;
         self.bottomView.info = json[@"businessInfo"];
+        self.bottomView.businessId = self.businessId;
         [self initForm];
     } failHandler:^(NSString *message) {
         self.bottomView.hidden = YES;
         [WTLoadingView1 hideAllLoadingForView:self.view];
-        [WTLoadFailView showFailInView:self.view retryPress:^{
+        [WTLoadFailView showFailInView:self.view top:WT_NavBar_Height retryPress:^{
             [self getData];
         }];
     }];

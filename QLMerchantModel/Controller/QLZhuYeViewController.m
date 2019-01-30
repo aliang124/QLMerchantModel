@@ -27,12 +27,14 @@
     self.formManager[@"QLZhuYeBarItem"] = @"QLZhuYeBarCell";
     self.formManager[@"QLZhuYeBar1Item"] = @"QLZhuYeBar1Cell";
     self.formManager[@"QLZhuYeGoodItem"] = @"QLZhuYeGoodCell";
-//    [self getData];
-    [self initForm];
+    [self getData];
+//    [self initForm];
 }
 
 - (void)getData {
+    
     NSDictionary *param = [NSDictionary dictionaryWithObject:[WTUtil strRelay:self.memberId] forKey:@"memberId"];
+    param = [NSDictionary dictionaryWithObject:@"1154642408137421115" forKey:@"memberId"];
     [WTLoadingView1 showLoadingInView:self.view top:WT_NavBar_Height];
     [QLMerchantNetWorkingUtil getZhuYeInfo:param successHandler:^(id json) {
         [WTLoadingView1 hideAllLoadingForView:self.view];
@@ -40,7 +42,7 @@
         [self initForm];
     } failHandler:^(NSString *message) {
         [WTLoadingView1 hideAllLoadingForView:self.view];
-        [WTLoadFailView showFailInView:self.view retryPress:^{
+        [WTLoadFailView showFailInView:self.view top:WT_NavBar_Height retryPress:^{
             [self getData];
         }];
     }];

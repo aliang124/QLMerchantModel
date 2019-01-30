@@ -46,7 +46,7 @@
         [self initForm];
     } failHandler:^(NSString *message) {
         [WTLoadingView1 hideAllLoadingForView:self.view];
-        [WTLoadFailView showFailInView:self.view retryPress:^{
+        [WTLoadFailView showFailInView:self.view top:WT_NavBar_Height retryPress:^{
             [self getData];
         }];
     }];
