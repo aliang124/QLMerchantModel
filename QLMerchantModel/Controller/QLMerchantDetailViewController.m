@@ -9,6 +9,8 @@
 #import "QLMerchantDetailViewController.h"
 #import "QLZhuYeViewController.h"
 #import "QLPingJiaListViewController.h"
+#import <MJRefresh.h>
+
 @interface QLMerchantDetailViewController ()
 @property (nonatomic,copy) NSDictionary *businessInfo;//商家信息
 @property (nonatomic,copy) NSArray *businessCommentsData;//评论
@@ -33,7 +35,13 @@
     self.formManager[@"QLMoreButtonItem"] = @"QLMoreButtonCell";
     self.formManager[@"QLMerchantQinZiItem"] = @"QLMerchantQinZiCell";
     self.formTable.height = WTScreenHeight-WT_NavBar_Height-54-WT_SafeArea_BOTTOM;
+
+    self.bottomView.hidden = YES;
+    [WTLoadingView1 showLoadingInView:self.view top:WT_NavBar_Height];
     [self getData];
+    self.formTable.mj_header = [MJRefreshNormalHeader headerWithRefreshingBlock:^{
+        [self getData];
+    }];
     [self createBottomView];
 }
 
@@ -45,10 +53,9 @@
 }
 
 - (void)getData {
-    self.bottomView.hidden = YES;
-    [WTLoadingView1 showLoadingInView:self.view top:WT_NavBar_Height];
     [QLMerchantNetWorkingUtil getBusinessDetail:self.businessId successHandler:^(id json) {
         [WTLoadingView1 hideAllLoadingForView:self.view];
+        [self.formTable.mj_header endRefreshing];
         self.businessInfo = json[@"businessInfo"];
         self.businessCommentsData = json[@"businessCommentsData"];
         self.businessGoodsData = json[@"businessGoodsData"];
@@ -59,6 +66,7 @@
         [self initForm];
     } failHandler:^(NSString *message) {
         self.bottomView.hidden = YES;
+        [self.formTable.mj_header endRefreshing];
         [WTLoadingView1 hideAllLoadingForView:self.view];
         [WTLoadFailView showFailInView:self.view top:WT_NavBar_Height retryPress:^{
             [self getData];

@@ -13,6 +13,7 @@
 #import "QLZhuYeBar1Cell.h"
 #import "QLZhuYeGoodCell.h"
 #import <CTMediator.h>
+#import <MJRefresh.h>
 
 @interface QLZhuYeViewController ()
 @property (nonatomic,copy) NSDictionary *memberInfo;
@@ -30,21 +31,27 @@
     self.formManager[@"QLZhuYeBarItem"] = @"QLZhuYeBarCell";
     self.formManager[@"QLZhuYeBar1Item"] = @"QLZhuYeBar1Cell";
     self.formManager[@"QLZhuYeGoodItem"] = @"QLZhuYeGoodCell";
+
+    [WTLoadingView1 showLoadingInView:self.view top:WT_NavBar_Height];
     [self getData];
+    self.formTable.mj_header = [MJRefreshNormalHeader headerWithRefreshingBlock:^{
+        [self getData];
+    }];
 }
 
 - (void)getData {
     NSDictionary *param = [NSDictionary dictionaryWithObject:[WTUtil strRelay:self.memberId] forKey:@"memberId"];
     param = [NSDictionary dictionaryWithObject:@"1154642408137421115" forKey:@"memberId"];
-    [WTLoadingView1 showLoadingInView:self.view top:WT_NavBar_Height];
     [QLMerchantNetWorkingUtil getZhuYeInfo:param successHandler:^(id json) {
         [WTLoadingView1 hideAllLoadingForView:self.view];
+        [self.formTable.mj_header endRefreshing];
         self.memberInfo = json[@"memberInfo"];
         self.isFollow = json[@"isFollow"];
         self.followNum = json[@"followNum"];
         self.fansNum = json[@"fansNum"];
         [self initForm];
     } failHandler:^(NSString *message) {
+        [self.formTable.mj_header endRefreshing];
         [WTLoadingView1 hideAllLoadingForView:self.view];
         [WTLoadFailView showFailInView:self.view top:WT_NavBar_Height retryPress:^{
             [self getData];
