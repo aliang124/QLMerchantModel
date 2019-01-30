@@ -56,6 +56,9 @@
 
 - (void)callPhone {
     NSString *phone = [WTUtil strRelay:self.item.info[@"telephone"]];
+    if (phone.length==0) {
+        phone = [WTUtil strRelay:self.item.info[@"phone"]];
+    }
     if (phone.length>0) {
         [WTUtil call:phone];
     }
