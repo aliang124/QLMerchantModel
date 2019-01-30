@@ -87,7 +87,6 @@
 - (void)cellWillAppear
 {
     [super cellWillAppear];
-    NSDictionary *dic = self.item.info;
     [userIcon setWebImageWithUrl:[WTUtil strRelay:self.item.info[@"image"]] placeHolder:[WTUtil createImageFromColor:QL_DateTextColor_Gray]];
     userNameLab.text = [WTUtil strRelay:self.item.info[@"nickName"]];
     cityLab.text = @"合肥";//[WTUtil strRelay:self.item.info[@"city"]];

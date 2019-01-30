@@ -69,6 +69,10 @@
     [section0 addItem:itZhuYe];
     
     QLZhuYeBarItem *itBar = [[QLZhuYeBarItem alloc] init];
+    itBar.info = self.memberInfo;
+    itBar.isFollow = self.isFollow;
+    itBar.fansNum = self.fansNum;
+    itBar.followNum = self.followNum;
     [section0 addItem:itBar];
 
     QLZhuYeBar1Item *itBar1 = [[QLZhuYeBar1Item alloc] init];
