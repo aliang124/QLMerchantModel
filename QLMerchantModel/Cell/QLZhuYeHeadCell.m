@@ -25,6 +25,9 @@
     UILabel *userNameLab;
     UILabel *cityLab;
     UILabel *ageLab;
+
+    UILabel *guanZhuLab;
+    UILabel *fansLab;
 }
 @end
 
@@ -65,6 +68,17 @@
     ageLab.font = WTFontSys(10);
     ageLab.textColor = QL_UserName_TitleColor_Black;
     [self.contentView addSubview:ageLab];
+    
+    guanZhuLab = [[UILabel alloc] initWithFrame:CGRectMake(0, ageLab.bottom+7, (WTScreenWidth/2)-5, 11)];
+    guanZhuLab.font = WTFontSys(12);
+    guanZhuLab.textAlignment = NSTextAlignmentRight;
+    guanZhuLab.textColor = QL_UserName_TitleColor_Black;
+    [self.contentView addSubview:guanZhuLab];
+    
+    fansLab = [[UILabel alloc] initWithFrame:CGRectMake((WTScreenWidth/2)+5, ageLab.bottom+7, (WTScreenWidth/2)-5, 11)];
+    fansLab.font = WTFontSys(12);
+    fansLab.textColor = QL_UserName_TitleColor_Black;
+    [self.contentView addSubview:fansLab];
 }
 
 - (void)setSelected:(BOOL)selected animated:(BOOL)animated{}
@@ -78,6 +92,8 @@
     userNameLab.text = [WTUtil strRelay:self.item.info[@"nickName"]];
     cityLab.text = @"合肥";//[WTUtil strRelay:self.item.info[@"city"]];
     ageLab.text = @"3岁宝妈";
+    guanZhuLab.text = [NSString stringWithFormat:@"关注 %@",[WTUtil strRelay:self.item.followNum]];
+    fansLab.text = [NSString stringWithFormat:@"粉丝 %@",[WTUtil strRelay:self.item.fansNum]];
 }
 
 @end
