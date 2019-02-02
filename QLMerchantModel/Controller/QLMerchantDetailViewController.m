@@ -10,7 +10,7 @@
 #import "QLZhuYeViewController.h"
 #import "QLPingJiaListViewController.h"
 #import <MJRefresh.h>
-
+#import "QLPingJiaDetailViewController.h"
 @interface QLMerchantDetailViewController ()
 @property (nonatomic,copy) NSDictionary *businessInfo;//商家信息
 @property (nonatomic,copy) NSArray *businessCommentsData;//评论
@@ -135,8 +135,14 @@
         for (int i = 0; i < self.businessCommentsData.count; i++) {
             NSDictionary *dic = self.businessCommentsData[i];
             QLPingJiaItem *itPingJia = [[QLPingJiaItem alloc] init];
-            itPingJia.pictureArray = [NSArray arrayWithObjects:@"",@"",@"", nil];
+//            itPingJia.pictureArray = [NSArray arrayWithObjects:@"",@"",@"", nil];
             itPingJia.info = dic;
+            itPingJia.selectionHandler = ^(QLPingJiaItem *item) {
+                QLPingJiaDetailViewController *pDetail = [[QLPingJiaDetailViewController alloc] init];
+                pDetail.businessId = bself.businessId;
+                pDetail.commentId = item.info[@"id"];
+                [bself.navigationController pushViewController:pDetail animated:YES];
+            };
             [section0 addItem:itPingJia];
         }
         QLMoreButtonItem *itMore = [[QLMoreButtonItem alloc] init];
