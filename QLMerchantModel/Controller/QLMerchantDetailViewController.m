@@ -46,8 +46,12 @@
 }
 
 - (void)createBottomView {
+    WT(weakSelf);
     _bottomView = [[QLBottomView alloc] initWithFrame:CGRectMake(0, WTScreenHeight-54-WT_SafeArea_BOTTOM, WTScreenWidth, 54+WT_SafeArea_BOTTOM)];
     _bottomView.businessId = self.businessId;
+    _bottomView.pingjiaCompletionHandler = ^{
+        [weakSelf.formTable.mj_header beginRefreshing];
+    };
     _bottomView.backgroundColor = [UIColor whiteColor];
     [self.view addSubview:_bottomView];
 }

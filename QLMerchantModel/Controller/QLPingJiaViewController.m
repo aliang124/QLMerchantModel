@@ -26,12 +26,13 @@
     [super viewDidLoad];
     self.navBar.title = @"评价";
     self.view.backgroundColor = [UIColor whiteColor];
+    WT(weakSelf);
     
     _titleLab = [[UILabel alloc] initWithFrame:CGRectMake(0, WT_NavBar_Height+26, WTScreenWidth, 15)];
     _titleLab.font = WTFontBoldSys(16);
     _titleLab.textColor = QL_UserName_TitleColor_Black;
     _titleLab.textAlignment = NSTextAlignmentCenter;
-    _titleLab.text = @"Lunaluz露娜家亲子餐厅";
+    _titleLab.text = [WTUtil strRelay:self.info[@"name"]];
     [self.view addSubview:_titleLab];
     
     UIImageView *lineImg = [[UIImageView alloc] initWithFrame:CGRectMake(12, WT_NavBar_Height+64, WTScreenWidth-12-12, 0.5)];
@@ -45,8 +46,10 @@
     [self.view addSubview:pingFenLab];
 
     _starView = [[WTKStarView alloc]initWithFrame:CGRectMake(pingFenLab.right+20, WT_NavBar_Height+82, 164, 20) starSize:CGSizeZero withStyle:WTKStarTypeInteger];
+    _starView.star = 5;
     _starView.starBlock = ^(NSString *star){
         NSLog(@"%@",star);
+        weakSelf.starView.star = [star floatValue];
     };
     [self.view addSubview:_starView];
     
@@ -119,5 +122,25 @@
         [WTToast makeText:@"请给评价打分"];
         return;
     }
+    NSMutableDictionary *param = [NSMutableDictionary dictionary];
+    [param setObject:[WTUtil strRelay:self.businessId] forKey:@"businessId"];
+    [param setObject:self.contentText.text forKey:@"comments"];
+    [param setObject:[NSNumber numberWithFloat:self.starView.star] forKey:@"score"];
+    [param setObject:@"10" forKey:@"anonymousStatus"];
+    if (self.btn1.selected) {
+        [param setObject:@"0" forKey:@"anonymousStatus"];
+    }
+    [QLMBProgressHUDUtil showActivityMessageInWindow:@"正在评价"];
+    [QLMerchantNetWorkingUtil confirmComments:param successHandler:^(id json) {
+        [QLMBProgressHUDUtil hideHUD];
+        [WTToast makeText:@"评论成功"];
+        if (self.pingjiaCompletionHandler) {
+            self.pingjiaCompletionHandler();
+        }
+        [self.navigationController popViewControllerAnimated:YES];
+    } failHandler:^(NSString *message) {
+        [WTToast makeText:message];
+        [QLMBProgressHUDUtil hideHUD];
+    }];
 }
 @end
