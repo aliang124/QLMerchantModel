@@ -81,34 +81,30 @@
     itScore.scoreText = self.commentsData[@"score"];
     [section0 addItem:itScore];
 
-//    QLPingJiaDescItem *itDesc = [[QLPingJiaDescItem alloc] init];
-//    itDesc.descText = self.commentsData[@"comments"];
-//    [section0 addItem:itDesc];
-//
-//    WTEmptyItem *itEmp = [WTEmptyItem initWithHeight:11];
-//    itEmp.bgColor = [UIColor whiteColor];
-//    [section0 addItem:itEmp];
-//
-//    [section0 addItem:[WTEmptyItem initWithHeight:8]];
-//
-//    QLPingJiaDianZanItem *itZan = [[QLPingJiaDianZanItem alloc] init];
-//    itZan.count = self.commentsData[@"praiseNumber"];
-//    [section0 addItem:itZan];
-//
-//    [section0 addItem:[WTEmptyItem initWithHeight:8]];
-//
-//    QLPingJiaDianZanItem *itHuiFuTitle = [[QLPingJiaDianZanItem alloc] init];
-//    itHuiFuTitle.isHuiFuTitle = YES;
-//    itHuiFuTitle.count = self.commentsData[@"replyNumber"];
-//    itHuiFuTitle.cellHeight = 42;
-//    [section0 addItem:itHuiFuTitle];
-//
-//    for (int i = 0; i < 5; i++) {
-//        QLPingJiaHuiFuItem *itHuiFu = [[QLPingJiaHuiFuItem alloc] init];
-//        [section0 addItem:itHuiFu];
-//    }
+    QLPingJiaDescItem *itDesc = [[QLPingJiaDescItem alloc] init];
+    itDesc.descText = self.commentsData[@"comments"];
+    [section0 addItem:itDesc];
+    [section0 addItem:[WTEmptyItem initWithHeight:11 bgColor:[UIColor whiteColor]]];
+
+    [section0 addItem:[WTEmptyItem initWithHeight:8]];
+
+    QLPingJiaDianZanItem *itZan = [[QLPingJiaDianZanItem alloc] init];
+    itZan.count = self.commentsData[@"praiseNumber"];
+    [section0 addItem:itZan];
+    [section0 addItem:[WTEmptyItem initWithHeight:8]];
+
+    QLPingJiaDianZanItem *itHuiFuTitle = [[QLPingJiaDianZanItem alloc] init];
+    itHuiFuTitle.isHuiFuTitle = YES;
+    itHuiFuTitle.count = self.commentsData[@"replyNumber"];
+    itHuiFuTitle.cellHeight = 42;
+    [section0 addItem:itHuiFuTitle];
+
+    for (int i = 0; i < 5; i++) {
+        QLPingJiaHuiFuItem *itHuiFu = [[QLPingJiaHuiFuItem alloc] init];
+        [section0 addItem:itHuiFu];
+    }
     
-//    [section0 addItem:[WTEmptyItem initWithHeight:8]];
+    [section0 addItem:[WTEmptyItem initWithHeight:8]];
     
     [sectionArray addObject:section0];
     [self.formManager replaceSectionsWithSectionsFromArray:sectionArray];

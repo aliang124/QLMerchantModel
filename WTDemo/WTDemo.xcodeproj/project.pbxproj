@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		221AEC82A8DB30A6462C9440 /* libPods-WTDemo.a in Frameworks */ = {isa = PBXBuildFile; fileRef = A24F37922F2E1F5DE6CD53EC /* libPods-WTDemo.a */; };
+		505796BD2206C3FD008044DF /* ZInputToolbar.m in Sources */ = {isa = PBXBuildFile; fileRef = 505796BB2206C3FD008044DF /* ZInputToolbar.m */; };
 		505B9A1D21E7703F00753310 /* city.plist in Resources */ = {isa = PBXBuildFile; fileRef = 505B9A1C21E7703F00753310 /* city.plist */; };
 		505DB7282205AAAC0088F9C5 /* WTKStarView.m in Sources */ = {isa = PBXBuildFile; fileRef = 505DB7222205AAAC0088F9C5 /* WTKStarView.m */; };
 		505F4B0321FB38C800F5B354 /* QLMerchantProductsCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 505F4B0221FB38C800F5B354 /* QLMerchantProductsCell.m */; };
@@ -52,6 +53,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		505796BB2206C3FD008044DF /* ZInputToolbar.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZInputToolbar.m; sourceTree = "<group>"; };
+		505796BC2206C3FD008044DF /* ZInputToolbar.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZInputToolbar.h; sourceTree = "<group>"; };
 		505B9A1C21E7703F00753310 /* city.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = city.plist; sourceTree = "<group>"; };
 		505DB7222205AAAC0088F9C5 /* WTKStarView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WTKStarView.m; sourceTree = "<group>"; };
 		505DB7242205AAAC0088F9C5 /* WTKStarView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WTKStarView.h; sourceTree = "<group>"; };
@@ -294,6 +297,8 @@
 		50EE218221EA0B3E00E1D9D1 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				505796BC2206C3FD008044DF /* ZInputToolbar.h */,
+				505796BB2206C3FD008044DF /* ZInputToolbar.m */,
 				505DB7242205AAAC0088F9C5 /* WTKStarView.h */,
 				505DB7222205AAAC0088F9C5 /* WTKStarView.m */,
 				5060B18A21FC288900CE93F4 /* QLBottomView.h */,
@@ -488,6 +493,7 @@
 				50EE219E21EA44BB00E1D9D1 /* QLMerchantInfoCell.m in Sources */,
 				5060B19221FC540900CE93F4 /* QLPingJiaViewController.m in Sources */,
 				5060B1A721FC8FE700CE93F4 /* QLPingJiaListViewController.m in Sources */,
+				505796BD2206C3FD008044DF /* ZInputToolbar.m in Sources */,
 				50EE21AA21EAF6F900E1D9D1 /* QLMerchantTagTimeCell.m in Sources */,
 				5064B01821FD4A0300B96181 /* QLPingJiaHeadBannerCell.m in Sources */,
 				5064B01B21FD4C9100B96181 /* QLPingJiaDetailUserCell.m in Sources */,
