@@ -84,6 +84,7 @@
     [replyBtn setTitle:@"回复" forState:UIControlStateNormal];
     [replyBtn setTitleColor:QL_UserName_TitleColor_Black forState:UIControlStateNormal];
     replyBtn.titleLabel.font = WTFontSys(10);
+    [replyBtn addTarget:self action:@selector(replyPress) forControlEvents:UIControlEventTouchUpInside];
     [self.contentView addSubview:replyBtn];
 
     zanBtn = [[UIButton alloc] initWithFrame:CGRectMake(WTScreenWidth-52-12-8-52, 0, 52, 22)];
@@ -139,6 +140,12 @@
     dateDay = [dateDay stringByReplacingOccurrencesOfString:@"-" withString:@"月"];
     dateDay = [NSString stringWithFormat:@"%@日",dateDay];
     dateLab.text = dateDay;
+}
+
+- (void)replyPress {
+    if (self.item.replyBtnPress) {
+        self.item.replyBtnPress();
+    }
 }
 
 @end

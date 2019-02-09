@@ -17,9 +17,10 @@
 #import "QLPingJiaDianZanCell.h"
 #import "QLPingJiaHuiFuCell.h"
 #import <MJRefresh.h>
-
-@interface QLPingJiaDetailViewController ()
+#import "ZInputToolbar.h"
+@interface QLPingJiaDetailViewController ()<ZInputToolbarDelegate>
 @property (nonatomic,copy) NSDictionary *commentsData;
+@property (nonatomic, strong) ZInputToolbar *inputToolbar;
 @end
 
 @implementation QLPingJiaDetailViewController
@@ -40,6 +41,15 @@
     self.formTable.mj_header = [MJRefreshNormalHeader headerWithRefreshingBlock:^{
         [self getData];
     }];
+    [self setTextViewToolbar];
+}
+
+-(void)setTextViewToolbar {
+    self.inputToolbar = [[ZInputToolbar alloc] initWithFrame:CGRectMake(0,self.view.height, self.view.width, 54)];
+    self.inputToolbar.textViewMaxLine = 5;
+    self.inputToolbar.delegate = self;
+    self.inputToolbar.placeholderLabel.text = @"回复用户A";
+    [self.view addSubview:self.inputToolbar];
 }
 
 - (void)getData {
@@ -101,6 +111,9 @@
 
     for (int i = 0; i < 5; i++) {
         QLPingJiaHuiFuItem *itHuiFu = [[QLPingJiaHuiFuItem alloc] init];
+        itHuiFu.replyBtnPress = ^{
+            [self.inputToolbar.textInput becomeFirstResponder];
+        };
         [section0 addItem:itHuiFu];
     }
     
@@ -110,4 +123,15 @@
     [self.formManager replaceSectionsWithSectionsFromArray:sectionArray];
     [self.formTable reloadData];
 }
+
+-(void)touchesBegan:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event {
+    [self.inputToolbar.textInput resignFirstResponder];
+}
+
+#pragma mark - ZInputToolbarDelegate
+-(void)inputToolbar:(ZInputToolbar *)inputToolbar sendContent:(NSString *)sendContent {
+    // 清空输入框文字
+    [self.inputToolbar sendSuccessEndEditing];
+}
+
 @end

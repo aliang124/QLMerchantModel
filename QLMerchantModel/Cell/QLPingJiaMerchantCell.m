@@ -43,6 +43,7 @@
     bgView.backgroundColor = WTColorHex(0xFAFAF7);
     bgView.layer.borderWidth = 1;
     bgView.layer.borderColor = WTColorHex(0xE4E4DA).CGColor;
+    bgView.userInteractionEnabled = NO;
     [self.contentView addSubview:bgView];
     
     iconImg = [[UIImageView alloc] initWithFrame:CGRectMake(8, 8, 80, 60)];
@@ -94,10 +95,10 @@
     addressLab.height = tagLab.height;
     addressLab.top = tagLab.top;
     //
-    distanceLab.text = @"2.3km";
-    [distanceLab sizeToFit];
-    distanceLab.height = tagLab.height;
-    distanceLab.top = tagLab.top;
-    distanceLab.left = bgView.width-distanceLab.width-10;
+//    distanceLab.text = @"2.3km";
+//    [distanceLab sizeToFit];
+//    distanceLab.height = tagLab.height;
+//    distanceLab.top = tagLab.top;
+//    distanceLab.left = bgView.width-distanceLab.width-10;
 }
 @end

@@ -9,6 +9,7 @@
 #import "QLBusiness.h"
 @interface QLPingJiaHuiFuItem : RETableViewItem
 @property (nonatomic,copy) id info;
+@property(nonatomic,copy) void(^replyBtnPress)(void);
 @end
 
 @interface QLPingJiaHuiFuCell : RETableViewCell
