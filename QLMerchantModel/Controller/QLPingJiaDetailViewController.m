@@ -46,6 +46,7 @@
 
 -(void)setTextViewToolbar {
     self.inputToolbar = [[ZInputToolbar alloc] initWithFrame:CGRectMake(0,self.view.height, self.view.width, 54)];
+    self.inputToolbar.backgroundColor = [UIColor whiteColor];
     self.inputToolbar.textViewMaxLine = 5;
     self.inputToolbar.delegate = self;
     self.inputToolbar.placeholderLabel.text = @"回复用户A";

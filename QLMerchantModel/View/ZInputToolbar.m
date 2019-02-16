@@ -19,11 +19,6 @@
 //按钮距离下边距离
 #define kButtonMargin 8
 
-#define SCREEN_HEIGHT [[UIScreen mainScreen] bounds].size.height
-#define SCREEN_WIDTH  [[UIScreen mainScreen] bounds].size.width
-
-#define RGBACOLOR(r,g,b,a) [UIColor colorWithRed:(r)/255.0f green:(g)/255.0f blue:(b)/255.0f alpha:(a)]
-
 @interface ZInputToolbar () <UITextViewDelegate>
 
 /***文本输入框最高高度***/
@@ -86,13 +81,13 @@
  */
 -(void)setupSubviews {
     UIView *line = [[UIView alloc] initWithFrame:CGRectMake(0, 0, self.width, 0.5)];
-    line.backgroundColor = RGBACOLOR(227, 228, 232, 1);
+    line.backgroundColor = QL_Border_LineColor;
     [self addSubview:line];
     
     self.textInput = [[UITextView alloc] initWithFrame:CGRectMake(5, (self.height - kInputHeight)/2, self.width - kButtonW - 20, kButtonH)];;
     self.textInput.font = [UIFont systemFontOfSize:15];
     self.textInput.layer.cornerRadius = 5;
-    self.textInput.layer.borderColor = RGBACOLOR(227, 228, 232, 1).CGColor;
+    self.textInput.layer.borderColor = QL_Border_LineColor.CGColor;
     self.textInput.layer.borderWidth = 1;
     self.textInput.layer.masksToBounds = YES;
     self.textInput.returnKeyType = UIReturnKeySend;
@@ -116,7 +111,7 @@
     self.sendBtn.enabled = NO;
     self.sendBtn.titleLabel.font = [UIFont systemFontOfSize:13];
     [self.sendBtn setTitle:@"发送" forState:UIControlStateNormal];
-    [self.sendBtn setTitleColor:RGBACOLOR(0, 0, 0, 0.2) forState:UIControlStateNormal];
+    [self.sendBtn setTitleColor:QL_UserName_TitleColor_Black forState:UIControlStateNormal];
     [self.sendBtn addTarget:self action:@selector(didClickSendBtn) forControlEvents:UIControlEventTouchUpInside];
     [self addSubview:self.sendBtn];
 }
@@ -155,10 +150,10 @@
     self.placeholderLabel.hidden = textView.text.length;
     if (textView.text.length) {
         self.sendBtn.enabled = YES;
-        [self.sendBtn setTitleColor:RGBACOLOR(0, 0, 0, 0.9) forState:UIControlStateNormal];
+        [self.sendBtn setTitleColor:QL_UserName_TitleColor_Black forState:UIControlStateNormal];
     }else {
         self.sendBtn.enabled = NO;
-        [self.sendBtn setTitleColor:RGBACOLOR(0, 0, 0, 0.2) forState:UIControlStateNormal];
+        [self.sendBtn setTitleColor:QL_DescColor_Gray forState:UIControlStateNormal];
     }
     _textInputHeight = ceilf([self.textInput sizeThatFits:CGSizeMake(self.textInput.width, MAXFLOAT)].height);
     self.textInput.scrollEnabled = _textInputHeight > _textInputMaxHeight && _textInputMaxHeight > 0;
@@ -168,7 +163,7 @@
         [UIView setAnimationDuration:0.3];
         [UIView setAnimationCurve:7];
         self.textInput.height = 5 + _textInputMaxHeight;
-        self.top = SCREEN_HEIGHT - _keyboardHeight - _textInputMaxHeight - 5 - 10;
+        self.top = WTScreenHeight - _keyboardHeight - _textInputMaxHeight - 5 - 10;
         self.height = _textInputMaxHeight + 15;
         self.sendBtn.top = self.height - kButtonH - kButtonMargin;
         [UIView commitAnimations];
@@ -178,7 +173,7 @@
         [UIView setAnimationDuration:0.3];
         [UIView setAnimationCurve:7];
         self.textInput.height = _textInputHeight;
-        self.top = SCREEN_HEIGHT - _keyboardHeight - _textInputHeight - 5 - 8;
+        self.top = WTScreenHeight - _keyboardHeight - _textInputHeight - 5 - 8;
         self.height = _textInputHeight + 15;
         self.sendBtn.top = self.height - kButtonH - kButtonMargin;
         [UIView commitAnimations];

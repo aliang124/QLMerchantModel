@@ -7,6 +7,9 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "WTBaseCore.h"
+#import "QLBusiness.h"
+
 @class ZInputToolbar;
 
 @protocol ZInputToolbarDelegate <NSObject>
